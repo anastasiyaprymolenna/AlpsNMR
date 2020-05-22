@@ -139,16 +139,16 @@
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Arguments passed on to <code>plot.nmr_dataset_1D</code></p><dl class='dl-horizontal'>
-  <dt>x</dt><dd><p>a <a href='nmr_dataset_1D.html'>nmr_dataset_1D</a> object</p></dd>
-  <dt>chemshift_range</dt><dd><p>range of the chemical shifts to be included. Can be of length 3
+      <td><p>Arguments passed on to <code><a href='plot.nmr_dataset_1D.html'>plot.nmr_dataset_1D</a></code></p><dl class='dl-horizontal'>
+    <dt><code>x</code></dt><dd><p>a <a href='nmr_dataset_1D.html'>nmr_dataset_1D</a> object</p></dd>
+    <dt><code>chemshift_range</code></dt><dd><p>range of the chemical shifts to be included. Can be of length 3
 to include the resolution in the third element (e.g. <code><a href='https://rdrr.io/r/base/c.html'>c(0.2, 0.8, 0.005)</a></code>)</p></dd>
-  <dt>NMRExperiment</dt><dd><p>A character vector with the NMRExperiments to include. Use "all" to include all experiments.</p></dd>
-  <dt>quantile_plot</dt><dd><p>If <code>TRUE</code> plot the 10%, 50%, 90% percentiles of the spectra as reference.
+    <dt><code>NMRExperiment</code></dt><dd><p>A character vector with the NMRExperiments to include. Use "all" to include all experiments.</p></dd>
+    <dt><code>quantile_plot</code></dt><dd><p>If <code>TRUE</code> plot the 10\<!-- %, 50\\%, 90\\% percentiles of the spectra as reference. -->
 If two numbers between 0 and 1 are given then a custom percentile can be plotted</p></dd>
-  <dt>quantile_colors</dt><dd><p>A vector with the colors for each of the quantiles</p></dd>
-  <dt>interactive</dt><dd><p>if <code>TRUE</code> return an interactive plotly plot, otherwise return a ggplot one.</p></dd>
-
+    <dt><code>quantile_colors</code></dt><dd><p>A vector with the colors for each of the quantiles</p></dd>
+    <dt><code>interactive</code></dt><dd><p>if <code>TRUE</code> return an interactive plotly plot, otherwise return a ggplot one.</p></dd>
+  
 </dl></td>
     </tr>
     </table>
@@ -158,44 +158,48 @@ If two numbers between 0 and 1 are given then a custom percentile can be plotted
     <p>the html filename created</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other nmr_dataset_1D functions: <code><a href='Automatic_targeted_profiling.html'>Automatic_targeted_profiling</a></code>,
-  <code><a href='sub-.nmr_dataset_1D.html'>[.nmr_dataset_1D</a></code>,
-  <code><a href='computes_peak_width_ppm.html'>computes_peak_width_ppm</a></code>,
-  <code><a href='file_lister.html'>file_lister</a></code>,
-  <code><a href='files_to_rDolphin_blood.html'>files_to_rDolphin_blood</a></code>,
-  <code><a href='files_to_rDolphin_cell.html'>files_to_rDolphin_cell</a></code>,
-  <code><a href='files_to_rDolphin_urine.html'>files_to_rDolphin_urine</a></code>,
-  <code><a href='get_integration_with_metadata.html'>get_integration_with_metadata</a></code>,
-  <code><a href='is.nmr_dataset_1D.html'>is.nmr_dataset_1D</a></code>,
-  <code><a href='load_and_save_functions.html'>load_and_save_functions</a></code>,
-  <code><a href='new_nmr_dataset_1D.html'>new_nmr_dataset_1D</a></code>,
-  <code><a href='nmr_align_find_ref.html'>nmr_align_find_ref</a></code>,
-  <code><a href='nmr_align.html'>nmr_align</a></code>,
-  <code><a href='nmr_baseline_removal.html'>nmr_baseline_removal</a></code>,
-  <code><a href='nmr_baseline_threshold.html'>nmr_baseline_threshold</a></code>,
-  <code><a href='nmr_detect_peaks_plot.html'>nmr_detect_peaks_plot</a></code>,
-  <code><a href='nmr_detect_peaks_tune_snr.html'>nmr_detect_peaks_tune_snr</a></code>,
-  <code><a href='nmr_detect_peaks.html'>nmr_detect_peaks</a></code>,
-  <code><a href='nmr_exclude_region.html'>nmr_exclude_region</a></code>,
-  <code><a href='nmr_integrate_peak_positions.html'>nmr_integrate_peak_positions</a></code>,
-  <code><a href='nmr_integrate_regions.html'>nmr_integrate_regions</a></code>,
-  <code><a href='nmr_interpolate_1D.html'>nmr_interpolate_1D</a></code>,
-  <code><a href='nmr_meta_add.html'>nmr_meta_add</a></code>,
-  <code><a href='nmr_meta_export.html'>nmr_meta_export</a></code>,
-  <code><a href='nmr_meta_get_column.html'>nmr_meta_get_column</a></code>,
-  <code><a href='nmr_meta_get.html'>nmr_meta_get</a></code>, <code><a href='nmr_normalize.html'>nmr_normalize</a></code>,
-  <code><a href='nmr_pca_build_model.html'>nmr_pca_build_model</a></code>,
-  <code><a href='nmr_pca_outliers_filter.html'>nmr_pca_outliers_filter</a></code>,
-  <code><a href='nmr_pca_outliers_plot.html'>nmr_pca_outliers_plot</a></code>,
-  <code><a href='nmr_pca_outliers_robust.html'>nmr_pca_outliers_robust</a></code>,
-  <code><a href='nmr_pca_outliers.html'>nmr_pca_outliers</a></code>,
-  <code><a href='nmr_ppm_resolution.html'>nmr_ppm_resolution</a></code>,
-  <code><a href='plot.nmr_dataset_1D.html'>plot.nmr_dataset_1D</a></code>,
-  <code><a href='rdCV_PLS_RF_ML.html'>rdCV_PLS_RF_ML</a></code>, <code><a href='rdCV_PLS_RF.html'>rdCV_PLS_RF</a></code>,
-  <code><a href='save_files_to_rDolphin.html'>save_files_to_rDolphin</a></code>,
-  <code><a href='to_ASICS.html'>to_ASICS</a></code>, <code><a href='to_ChemoSpec.html'>to_ChemoSpec</a></code>,
-  <code><a href='to_rDolphin.html'>to_rDolphin</a></code>,
-  <code><a href='validate_nmr_dataset_1D.html'>validate_nmr_dataset_1D</a></code></p></div>
+    <div class='dont-index'><p>Other nmr_dataset_1D functions: 
+<code><a href='Automatic_targeted_profiling.html'>Automatic_targeted_profiling</a>()</code>,
+<code><a href='sub-.nmr_dataset_1D.html'>[.nmr_dataset_1D</a>()</code>,
+<code><a href='computes_peak_width_ppm.html'>computes_peak_width_ppm</a>()</code>,
+<code><a href='file_lister.html'>file_lister</a>()</code>,
+<code><a href='files_to_rDolphin_blood.html'>files_to_rDolphin_blood</a>()</code>,
+<code><a href='files_to_rDolphin_cell.html'>files_to_rDolphin_cell</a>()</code>,
+<code><a href='files_to_rDolphin_urine.html'>files_to_rDolphin_urine</a>()</code>,
+<code><a href='get_integration_with_metadata.html'>get_integration_with_metadata</a>()</code>,
+<code><a href='is.nmr_dataset_1D.html'>is.nmr_dataset_1D</a>()</code>,
+<code><a href='load_and_save_functions.html'>load_and_save_functions</a></code>,
+<code><a href='new_nmr_dataset_1D.html'>new_nmr_dataset_1D</a>()</code>,
+<code><a href='nmr_align_find_ref.html'>nmr_align_find_ref</a>()</code>,
+<code><a href='nmr_align.html'>nmr_align</a>()</code>,
+<code><a href='nmr_baseline_removal.html'>nmr_baseline_removal</a>()</code>,
+<code><a href='nmr_baseline_threshold.html'>nmr_baseline_threshold</a>()</code>,
+<code><a href='nmr_detect_peaks_plot.html'>nmr_detect_peaks_plot</a>()</code>,
+<code><a href='nmr_detect_peaks_tune_snr.html'>nmr_detect_peaks_tune_snr</a>()</code>,
+<code><a href='nmr_detect_peaks.html'>nmr_detect_peaks</a>()</code>,
+<code><a href='nmr_exclude_region.html'>nmr_exclude_region</a>()</code>,
+<code><a href='nmr_integrate_peak_positions.html'>nmr_integrate_peak_positions</a>()</code>,
+<code><a href='nmr_integrate_regions.html'>nmr_integrate_regions</a>()</code>,
+<code><a href='nmr_interpolate_1D.html'>nmr_interpolate_1D</a>()</code>,
+<code><a href='nmr_meta_add.html'>nmr_meta_add</a>()</code>,
+<code><a href='nmr_meta_export.html'>nmr_meta_export</a>()</code>,
+<code><a href='nmr_meta_get_column.html'>nmr_meta_get_column</a>()</code>,
+<code><a href='nmr_meta_get.html'>nmr_meta_get</a>()</code>,
+<code><a href='nmr_normalize.html'>nmr_normalize</a>()</code>,
+<code><a href='nmr_pca_build_model.html'>nmr_pca_build_model</a>()</code>,
+<code><a href='nmr_pca_outliers_filter.html'>nmr_pca_outliers_filter</a>()</code>,
+<code><a href='nmr_pca_outliers_plot.html'>nmr_pca_outliers_plot</a>()</code>,
+<code><a href='nmr_pca_outliers_robust.html'>nmr_pca_outliers_robust</a>()</code>,
+<code><a href='nmr_pca_outliers.html'>nmr_pca_outliers</a>()</code>,
+<code><a href='nmr_ppm_resolution.html'>nmr_ppm_resolution</a>()</code>,
+<code><a href='plot.nmr_dataset_1D.html'>plot.nmr_dataset_1D</a>()</code>,
+<code><a href='rdCV_PLS_RF_ML.html'>rdCV_PLS_RF_ML</a>()</code>,
+<code><a href='rdCV_PLS_RF.html'>rdCV_PLS_RF</a>()</code>,
+<code><a href='save_files_to_rDolphin.html'>save_files_to_rDolphin</a>()</code>,
+<code><a href='to_ASICS.html'>to_ASICS</a>()</code>,
+<code><a href='to_ChemoSpec.html'>to_ChemoSpec</a>()</code>,
+<code><a href='to_rDolphin.html'>to_rDolphin</a>()</code>,
+<code><a href='validate_nmr_dataset_1D.html'>validate_nmr_dataset_1D</a>()</code></p></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

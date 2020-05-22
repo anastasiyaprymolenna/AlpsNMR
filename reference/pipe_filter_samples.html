@@ -140,8 +140,8 @@
 Some examples:</p><ul>
 <li><p>conditions &lt;- 'Gender == "Female"'</p></li>
 <li><p>conditions &lt;- 'Cohort == "Chuv"'</p></li>
-<li><p>conditions &lt;- 'TimePoint <!-- %in% c("T0", "T31")' --></p></li>
-<li><p>conditions &lt;- c(Cohort == "Chuv", 'TimePoint <!-- %in% c("T0", "T31")') --></p></li>
+<li><p>conditions &lt;- 'TimePoint %in% c("T0", "T31")'</p></li>
+<li><p>conditions &lt;- c(Cohort == "Chuv", 'TimePoint %in% c("T0", "T31")')</p></li>
 </ul>
 
 <p>Only samples fullfilling all the given conditions are kept in further analysis.</p></td>
@@ -154,14 +154,15 @@ Some examples:</p><ul>
 
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other pipeline functions: <code><a href='pipe_add_metadata.html'>pipe_add_metadata</a></code>,
-  <code><a href='pipe_exclude_regions.html'>pipe_exclude_regions</a></code>,
-  <code><a href='pipe_interpolate_1D.html'>pipe_interpolate_1D</a></code>,
-  <code><a href='pipe_load_samples.html'>pipe_load_samples</a></code>,
-  <code><a href='pipe_normalization.html'>pipe_normalization</a></code>,
-  <code><a href='pipe_outlier_detection.html'>pipe_outlier_detection</a></code>,
-  <code><a href='pipe_peak_integration.html'>pipe_peak_integration</a></code>,
-  <code><a href='pipe_peakdet_align.html'>pipe_peakdet_align</a></code></p></div>
+    <div class='dont-index'><p>Other pipeline functions: 
+<code><a href='pipe_add_metadata.html'>pipe_add_metadata</a>()</code>,
+<code><a href='pipe_exclude_regions.html'>pipe_exclude_regions</a>()</code>,
+<code><a href='pipe_interpolate_1D.html'>pipe_interpolate_1D</a>()</code>,
+<code><a href='pipe_load_samples.html'>pipe_load_samples</a>()</code>,
+<code><a href='pipe_normalization.html'>pipe_normalization</a>()</code>,
+<code><a href='pipe_outlier_detection.html'>pipe_outlier_detection</a>()</code>,
+<code><a href='pipe_peak_integration.html'>pipe_peak_integration</a>()</code>,
+<code><a href='pipe_peakdet_align.html'>pipe_peakdet_align</a>()</code></p></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

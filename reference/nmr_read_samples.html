@@ -124,11 +124,21 @@
     <p>These functions load samples from files and return a <a href='nmr_dataset.html'>nmr_dataset</a>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>nmr_read_samples_dir</span>(<span class='no'>samples_dir</span>, <span class='kw'>format</span> <span class='kw'>=</span> <span class='st'>"bruker"</span>,
-  <span class='kw'>pulse_sequence</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>metadata_only</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)
+    <pre class="usage"><span class='fu'>nmr_read_samples_dir</span>(
+  <span class='no'>samples_dir</span>,
+  <span class='kw'>format</span> <span class='kw'>=</span> <span class='st'>"bruker"</span>,
+  <span class='kw'>pulse_sequence</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>metadata_only</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='no'>...</span>
+)
 
-<span class='fu'>nmr_read_samples</span>(<span class='no'>sample_names</span>, <span class='kw'>format</span> <span class='kw'>=</span> <span class='st'>"bruker"</span>,
-  <span class='kw'>pulse_sequence</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>metadata_only</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='no'>...</span>)</pre>
+<span class='fu'>nmr_read_samples</span>(
+  <span class='no'>sample_names</span>,
+  <span class='kw'>format</span> <span class='kw'>=</span> <span class='st'>"bruker"</span>,
+  <span class='kw'>pulse_sequence</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+  <span class='kw'>metadata_only</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='no'>...</span>
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -166,29 +176,33 @@ the samples that match that pulse sequence.</p></td>
     <p>a <a href='nmr_dataset.html'>nmr_dataset</a> object</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other nmr_dataset functions: <code><a href='sub-.nmr_dataset.html'>[.nmr_dataset</a></code>,
-  <code><a href='load_and_save_functions.html'>load_and_save_functions</a></code>,
-  <code><a href='new_nmr_dataset.html'>new_nmr_dataset</a></code>,
-  <code><a href='nmr_interpolate_1D.html'>nmr_interpolate_1D</a></code>,
-  <code><a href='nmr_meta_add.html'>nmr_meta_add</a></code>,
-  <code><a href='nmr_meta_export.html'>nmr_meta_export</a></code>,
-  <code><a href='nmr_meta_get_column.html'>nmr_meta_get_column</a></code>,
-  <code><a href='nmr_meta_get.html'>nmr_meta_get</a></code>,
-  <code><a href='nmr_ppm_resolution.html'>nmr_ppm_resolution</a></code>,
-  <code><a href='validate_nmr_dataset.html'>validate_nmr_dataset</a></code></p>
-<p>Other import/export functions: <code><a href='Automatic_targeted_profiling.html'>Automatic_targeted_profiling</a></code>,
-  <code><a href='files_to_rDolphin_blood.html'>files_to_rDolphin_blood</a></code>,
-  <code><a href='files_to_rDolphin_cell.html'>files_to_rDolphin_cell</a></code>,
-  <code><a href='files_to_rDolphin_urine.html'>files_to_rDolphin_urine</a></code>,
-  <code><a href='load_and_save_functions.html'>load_and_save_functions</a></code>,
-  <code><a href='nmr_data.html'>nmr_data</a></code>, <code><a href='nmr_meta_export.html'>nmr_meta_export</a></code>,
-  <code><a href='nmr_read_bruker_fid.html'>nmr_read_bruker_fid</a></code>,
-  <code><a href='nmr_zip_bruker_samples.html'>nmr_zip_bruker_samples</a></code>,
-  <code><a href='pipe_load_samples.html'>pipe_load_samples</a></code>,
-  <code><a href='save_files_to_rDolphin.html'>save_files_to_rDolphin</a></code>,
-  <code><a href='save_profiling_output.html'>save_profiling_output</a></code>,
-  <code><a href='to_ASICS.html'>to_ASICS</a></code>, <code><a href='to_ChemoSpec.html'>to_ChemoSpec</a></code>,
-  <code><a href='to_rDolphin.html'>to_rDolphin</a></code></p></div>
+    <div class='dont-index'><p>Other nmr_dataset functions: 
+<code><a href='sub-.nmr_dataset.html'>[.nmr_dataset</a>()</code>,
+<code><a href='load_and_save_functions.html'>load_and_save_functions</a></code>,
+<code><a href='new_nmr_dataset.html'>new_nmr_dataset</a>()</code>,
+<code><a href='nmr_interpolate_1D.html'>nmr_interpolate_1D</a>()</code>,
+<code><a href='nmr_meta_add.html'>nmr_meta_add</a>()</code>,
+<code><a href='nmr_meta_export.html'>nmr_meta_export</a>()</code>,
+<code><a href='nmr_meta_get_column.html'>nmr_meta_get_column</a>()</code>,
+<code><a href='nmr_meta_get.html'>nmr_meta_get</a>()</code>,
+<code><a href='nmr_ppm_resolution.html'>nmr_ppm_resolution</a>()</code>,
+<code><a href='validate_nmr_dataset.html'>validate_nmr_dataset</a>()</code></p>
+<p>Other import/export functions: 
+<code><a href='Automatic_targeted_profiling.html'>Automatic_targeted_profiling</a>()</code>,
+<code><a href='files_to_rDolphin_blood.html'>files_to_rDolphin_blood</a>()</code>,
+<code><a href='files_to_rDolphin_cell.html'>files_to_rDolphin_cell</a>()</code>,
+<code><a href='files_to_rDolphin_urine.html'>files_to_rDolphin_urine</a>()</code>,
+<code><a href='load_and_save_functions.html'>load_and_save_functions</a></code>,
+<code><a href='nmr_data.html'>nmr_data</a>()</code>,
+<code><a href='nmr_meta_export.html'>nmr_meta_export</a>()</code>,
+<code><a href='nmr_read_bruker_fid.html'>nmr_read_bruker_fid</a>()</code>,
+<code><a href='nmr_zip_bruker_samples.html'>nmr_zip_bruker_samples</a>()</code>,
+<code><a href='pipe_load_samples.html'>pipe_load_samples</a>()</code>,
+<code><a href='save_files_to_rDolphin.html'>save_files_to_rDolphin</a>()</code>,
+<code><a href='save_profiling_output.html'>save_profiling_output</a>()</code>,
+<code><a href='to_ASICS.html'>to_ASICS</a>()</code>,
+<code><a href='to_ChemoSpec.html'>to_ChemoSpec</a>()</code>,
+<code><a href='to_rDolphin.html'>to_rDolphin</a>()</code></p></div>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

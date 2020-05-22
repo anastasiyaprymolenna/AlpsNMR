@@ -128,8 +128,11 @@ in human urine samples. The data frame contains the column "Bouatra_2013" showin
 the proposed metabolite was reported in this publication as regular urinary metabolite.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>nmr_identify_regions_urine</span>(<span class='no'>ppm_to_assign</span>, <span class='kw'>num_proposed_compounds</span> <span class='kw'>=</span> <span class='fl'>5</span>,
-  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
+    <pre class="usage"><span class='fu'>nmr_identify_regions_urine</span>(
+  <span class='no'>ppm_to_assign</span>,
+  <span class='kw'>num_proposed_compounds</span> <span class='kw'>=</span> <span class='fl'>5</span>,
+  <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -153,22 +156,24 @@ the proposed metabolite was reported in this publication as regular urinary meta
     <p>a data frame with plausible assignations.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p>Other peak detection functions: <code><a href='nmr_baseline_threshold.html'>nmr_baseline_threshold</a></code>,
-  <code><a href='nmr_detect_peaks_plot.html'>nmr_detect_peaks_plot</a></code>,
-  <code><a href='nmr_detect_peaks_tune_snr.html'>nmr_detect_peaks_tune_snr</a></code>,
-  <code><a href='nmr_detect_peaks.html'>nmr_detect_peaks</a></code>,
-  <code><a href='nmr_identify_regions_blood.html'>nmr_identify_regions_blood</a></code>,
-  <code><a href='nmr_identify_regions_cell.html'>nmr_identify_regions_cell</a></code>,
-  <code><a href='nmr_integrate_regions.html'>nmr_integrate_regions</a></code>,
-  <code><a href='pipe_peakdet_align.html'>pipe_peakdet_align</a></code>,
-  <code><a href='regions_from_peak_table.html'>regions_from_peak_table</a></code></p>
-<p>Other peak integration functions: <code><a href='computes_peak_width_ppm.html'>computes_peak_width_ppm</a></code>,
-  <code><a href='get_integration_with_metadata.html'>get_integration_with_metadata</a></code>,
-  <code><a href='nmr_identify_regions_blood.html'>nmr_identify_regions_blood</a></code>,
-  <code><a href='nmr_identify_regions_cell.html'>nmr_identify_regions_cell</a></code>,
-  <code><a href='nmr_integrate_peak_positions.html'>nmr_integrate_peak_positions</a></code>,
-  <code><a href='nmr_integrate_regions.html'>nmr_integrate_regions</a></code>,
-  <code><a href='pipe_peak_integration.html'>pipe_peak_integration</a></code></p></div>
+    <div class='dont-index'><p>Other peak detection functions: 
+<code><a href='nmr_baseline_threshold.html'>nmr_baseline_threshold</a>()</code>,
+<code><a href='nmr_detect_peaks_plot.html'>nmr_detect_peaks_plot</a>()</code>,
+<code><a href='nmr_detect_peaks_tune_snr.html'>nmr_detect_peaks_tune_snr</a>()</code>,
+<code><a href='nmr_detect_peaks.html'>nmr_detect_peaks</a>()</code>,
+<code><a href='nmr_identify_regions_blood.html'>nmr_identify_regions_blood</a>()</code>,
+<code><a href='nmr_identify_regions_cell.html'>nmr_identify_regions_cell</a>()</code>,
+<code><a href='nmr_integrate_regions.html'>nmr_integrate_regions</a>()</code>,
+<code><a href='pipe_peakdet_align.html'>pipe_peakdet_align</a>()</code>,
+<code><a href='regions_from_peak_table.html'>regions_from_peak_table</a>()</code></p>
+<p>Other peak integration functions: 
+<code><a href='computes_peak_width_ppm.html'>computes_peak_width_ppm</a>()</code>,
+<code><a href='get_integration_with_metadata.html'>get_integration_with_metadata</a>()</code>,
+<code><a href='nmr_identify_regions_blood.html'>nmr_identify_regions_blood</a>()</code>,
+<code><a href='nmr_identify_regions_cell.html'>nmr_identify_regions_cell</a>()</code>,
+<code><a href='nmr_integrate_peak_positions.html'>nmr_integrate_peak_positions</a>()</code>,
+<code><a href='nmr_integrate_regions.html'>nmr_integrate_regions</a>()</code>,
+<code><a href='pipe_peak_integration.html'>pipe_peak_integration</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
