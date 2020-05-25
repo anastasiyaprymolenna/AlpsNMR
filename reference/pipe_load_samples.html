@@ -69,7 +69,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">AlpsNMR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.3.3.9002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.5.9002</span>
       </span>
     </div>
 
@@ -149,16 +149,15 @@
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other pipeline functions: 
+<code><a href='Pipe_normalization.html'>Pipe_normalization</a></code>,
 <code><a href='pipe_add_metadata.html'>pipe_add_metadata</a>()</code>,
 <code><a href='pipe_exclude_regions.html'>pipe_exclude_regions</a>()</code>,
 <code><a href='pipe_filter_samples.html'>pipe_filter_samples</a>()</code>,
 <code><a href='pipe_interpolate_1D.html'>pipe_interpolate_1D</a>()</code>,
-<code><a href='pipe_normalization.html'>pipe_normalization</a>()</code>,
 <code><a href='pipe_outlier_detection.html'>pipe_outlier_detection</a>()</code>,
-<code><a href='pipe_peak_integration.html'>pipe_peak_integration</a>()</code>,
-<code><a href='pipe_peakdet_align.html'>pipe_peakdet_align</a>()</code></p>
+<code><a href='pipe_pakdet_align.html'>pipe_pakdet_align</a></code>,
+<code><a href='pipe_peak_integration.html'>pipe_peak_integration</a>()</code></p>
 <p>Other import/export functions: 
-<code><a href='Automatic_targeted_profiling.html'>Automatic_targeted_profiling</a>()</code>,
 <code><a href='files_to_rDolphin_blood.html'>files_to_rDolphin_blood</a>()</code>,
 <code><a href='files_to_rDolphin_cell.html'>files_to_rDolphin_cell</a>()</code>,
 <code><a href='files_to_rDolphin_urine.html'>files_to_rDolphin_urine</a>()</code>,
@@ -170,16 +169,14 @@
 <code><a href='nmr_zip_bruker_samples.html'>nmr_zip_bruker_samples</a>()</code>,
 <code><a href='save_files_to_rDolphin.html'>save_files_to_rDolphin</a>()</code>,
 <code><a href='save_profiling_output.html'>save_profiling_output</a>()</code>,
-<code><a href='to_ASICS.html'>to_ASICS</a>()</code>,
-<code><a href='to_ChemoSpec.html'>to_ChemoSpec</a>()</code>,
-<code><a href='to_rDolphin.html'>to_rDolphin</a>()</code></p></div>
+<code><a href='to_ChemoSpec.html'>to_ChemoSpec</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='fu'>pipe_load_samples</span>(<span class='st'>"/dir/with/nmr/samples/"</span>,
-                  <span class='kw'>glob</span> <span class='kw'>=</span> <span class='st'>"*0"</span>,
-                  <span class='kw'>output_dir</span> <span class='kw'>=</span> <span class='st'>"/dir/to/save/output"</span>)
-}</div></pre>
+    <pre class="examples"><div class='input'><span class='no'>dir_to_demo_dataset</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"dataset-demo"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"AlpsNMR"</span>)
+<span class='fu'>pipe_load_samples</span>(<span class='no'>dir_to_demo_dataset</span>,
+                  <span class='kw'>glob</span> <span class='kw'>=</span> <span class='st'>"*.zip"</span>,
+                  <span class='kw'>output_dir</span> <span class='kw'>=</span> <span class='st'>"./pipe_output"</span>)</div><div class='output co'>#&gt; <span class='message'>Starting pipe_load_samples at 2020-05-25 16:51:13</span></div><div class='output co'>#&gt; <span class='message'>Saving pipe_load_samples results at 2020-05-25 16:51:16</span></div><div class='output co'>#&gt; <span class='message'>4 samples loaded.</span></div><div class='output co'>#&gt; <span class='message'>Ending pipe_load_samples at 2020-05-25 16:51:17</span></div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

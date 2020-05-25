@@ -71,7 +71,7 @@ the proposed metabolite was reported in this publication as regular urinary meta
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">AlpsNMR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.3.3.9002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.5.9002</span>
       </span>
     </div>
 
@@ -164,11 +164,11 @@ the proposed metabolite was reported in this publication as regular urinary meta
 <code><a href='nmr_identify_regions_blood.html'>nmr_identify_regions_blood</a>()</code>,
 <code><a href='nmr_identify_regions_cell.html'>nmr_identify_regions_cell</a>()</code>,
 <code><a href='nmr_integrate_regions.html'>nmr_integrate_regions</a>()</code>,
-<code><a href='pipe_peakdet_align.html'>pipe_peakdet_align</a>()</code>,
+<code><a href='pipe_pakdet_align.html'>pipe_pakdet_align</a></code>,
 <code><a href='regions_from_peak_table.html'>regions_from_peak_table</a>()</code></p>
 <p>Other peak integration functions: 
 <code><a href='computes_peak_width_ppm.html'>computes_peak_width_ppm</a>()</code>,
-<code><a href='get_integration_with_metadata.html'>get_integration_with_metadata</a>()</code>,
+<code><a href='get_integration_with_metada.html'>get_integration_with_metada</a></code>,
 <code><a href='nmr_identify_regions_blood.html'>nmr_identify_regions_blood</a>()</code>,
 <code><a href='nmr_identify_regions_cell.html'>nmr_identify_regions_cell</a>()</code>,
 <code><a href='nmr_integrate_peak_positions.html'>nmr_integrate_peak_positions</a>()</code>,
@@ -176,13 +176,10 @@ the proposed metabolite was reported in this publication as regular urinary meta
 <code><a href='pipe_peak_integration.html'>pipe_peak_integration</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='co'># We identify regions from from the corresponding ppm storaged in a vector.</span>
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>AlpsNMR</span>)
+    <pre class="examples"><div class='input'><span class='co'># We identify regions from from the corresponding ppm storaged in a vector.</span>
 <span class='no'>ppm_to_assign</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>4.060960203</span>, <span class='fl'>3.048970634</span>,<span class='fl'>2.405935596</span>,
 <span class='fl'>3.24146865</span>,<span class='fl'>0.990616851</span>,<span class='fl'>1.002075066</span>,<span class='fl'>0.955325548</span>)
-<span class='no'>identification</span> <span class='kw'>&lt;-</span> <span class='fu'>nmr_identify_regions_urine</span> (<span class='no'>ppm_to_assign</span>, <span class='kw'>num_proposed_compounds</span> <span class='kw'>=</span> <span class='fl'>5</span>)
-}</div></pre>
+<span class='no'>identification</span> <span class='kw'>&lt;-</span> <span class='fu'>nmr_identify_regions_urine</span> (<span class='no'>ppm_to_assign</span>, <span class='kw'>num_proposed_compounds</span> <span class='kw'>=</span> <span class='fl'>5</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

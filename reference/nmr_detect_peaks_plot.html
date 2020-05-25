@@ -69,7 +69,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">AlpsNMR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.3.3.9002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.5.9002</span>
       </span>
     </div>
 
@@ -147,6 +147,9 @@
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Plot peak detection results</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other peak detection functions: 
@@ -157,7 +160,7 @@
 <code><a href='nmr_identify_regions_cell.html'>nmr_identify_regions_cell</a>()</code>,
 <code><a href='nmr_identify_regions_urine.html'>nmr_identify_regions_urine</a>()</code>,
 <code><a href='nmr_integrate_regions.html'>nmr_integrate_regions</a>()</code>,
-<code><a href='pipe_peakdet_align.html'>pipe_peakdet_align</a>()</code>,
+<code><a href='pipe_pakdet_align.html'>pipe_pakdet_align</a></code>,
 <code><a href='regions_from_peak_table.html'>regions_from_peak_table</a>()</code></p>
 <p>Other peak detection functions: 
 <code><a href='nmr_baseline_threshold.html'>nmr_baseline_threshold</a>()</code>,
@@ -167,17 +170,17 @@
 <code><a href='nmr_identify_regions_cell.html'>nmr_identify_regions_cell</a>()</code>,
 <code><a href='nmr_identify_regions_urine.html'>nmr_identify_regions_urine</a>()</code>,
 <code><a href='nmr_integrate_regions.html'>nmr_integrate_regions</a>()</code>,
-<code><a href='pipe_peakdet_align.html'>pipe_peakdet_align</a>()</code>,
+<code><a href='pipe_pakdet_align.html'>pipe_pakdet_align</a></code>,
 <code><a href='regions_from_peak_table.html'>regions_from_peak_table</a>()</code></p>
 <p>Other nmr_dataset_1D functions: 
-<code><a href='Automatic_targeted_profiling.html'>Automatic_targeted_profiling</a>()</code>,
 <code><a href='sub-.nmr_dataset_1D.html'>[.nmr_dataset_1D</a>()</code>,
 <code><a href='computes_peak_width_ppm.html'>computes_peak_width_ppm</a>()</code>,
 <code><a href='file_lister.html'>file_lister</a>()</code>,
 <code><a href='files_to_rDolphin_blood.html'>files_to_rDolphin_blood</a>()</code>,
 <code><a href='files_to_rDolphin_cell.html'>files_to_rDolphin_cell</a>()</code>,
 <code><a href='files_to_rDolphin_urine.html'>files_to_rDolphin_urine</a>()</code>,
-<code><a href='get_integration_with_metadata.html'>get_integration_with_metadata</a>()</code>,
+<code><a href='format.nmr_dataset_1D.html'>format.nmr_dataset_1D</a>()</code>,
+<code><a href='get_integration_with_metada.html'>get_integration_with_metada</a></code>,
 <code><a href='is.nmr_dataset_1D.html'>is.nmr_dataset_1D</a>()</code>,
 <code><a href='load_and_save_functions.html'>load_and_save_functions</a></code>,
 <code><a href='new_nmr_dataset_1D.html'>new_nmr_dataset_1D</a>()</code>,
@@ -204,59 +207,29 @@
 <code><a href='nmr_ppm_resolution.html'>nmr_ppm_resolution</a>()</code>,
 <code><a href='plot.nmr_dataset_1D.html'>plot.nmr_dataset_1D</a>()</code>,
 <code><a href='plot_webgl.html'>plot_webgl</a>()</code>,
-<code><a href='rdCV_PLS_RF_ML.html'>rdCV_PLS_RF_ML</a>()</code>,
-<code><a href='rdCV_PLS_RF.html'>rdCV_PLS_RF</a>()</code>,
+<code><a href='print.nmr_dataset_1D.html'>print.nmr_dataset_1D</a>()</code>,
 <code><a href='save_files_to_rDolphin.html'>save_files_to_rDolphin</a>()</code>,
-<code><a href='to_ASICS.html'>to_ASICS</a>()</code>,
 <code><a href='to_ChemoSpec.html'>to_ChemoSpec</a>()</code>,
-<code><a href='to_rDolphin.html'>to_rDolphin</a>()</code>,
-<code><a href='validate_nmr_dataset_1D.html'>validate_nmr_dataset_1D</a>()</code></p></div>
+<code><a href='validate_nmr_dataset.html'>validate_nmr_dataset</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-
-<span class='co'># 0. Multiprocess (parallelization) to set the number of cores working in your PC</span>
-<span class='fu'><a href='https://rdrr.io/pkg/future/man/plan.html'>plan</a></span>(<span class='no'>multiprocess</span>, <span class='kw'>workers</span> <span class='kw'>=</span> <span class='fl'>12</span>)
-
+    <pre class="examples"><div class='input'><span class='no'>dir_to_demo_dataset</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"dataset-demo"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"AlpsNMR"</span>)
+<span class='no'>nmr_dataset</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='nmr_read_samples.html'>nmr_read_samples_dir</a></span>(<span class='no'>dir_to_demo_dataset</span>)
+<span class='no'>dataset_1D</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='nmr_interpolate_1D.html'>nmr_interpolate_1D</a></span>(<span class='no'>nmr_dataset</span>, <span class='kw'>axis</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>min</span> <span class='kw'>=</span> -<span class='fl'>0.5</span>, <span class='kw'>max</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>by</span> <span class='kw'>=</span> <span class='fl'>2.3E-4</span>))
 <span class='co'># 1.Peak detection in the dataset.</span>
-<span class='no'>peak_data</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='nmr_detect_peaks.html'>nmr_detect_peaks</a></span>(<span class='no'>nmr_dataset</span>,
+<span class='no'>peak_data</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='nmr_detect_peaks.html'>nmr_detect_peaks</a></span>(<span class='no'>dataset_1D</span>,
                               <span class='kw'>nDivRange_ppm</span> <span class='kw'>=</span> <span class='fl'>0.1</span>, <span class='co'># Size of detection segments</span>
                               <span class='kw'>scales</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span>(<span class='fl'>1</span>, <span class='fl'>16</span>, <span class='fl'>2</span>),
                               <span class='kw'>baselineThresh</span> <span class='kw'>=</span> <span class='fl'>0</span>, <span class='co'># Minimum peak intensity</span>
                               <span class='kw'>SNR.Th</span> <span class='kw'>=</span> <span class='fl'>4</span>) <span class='co'># Signal to noise ratio</span>
-
-<span class='co'># 2.Find the reference spectrum to align with.</span>
-<span class='no'>NMRExp_ref</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='nmr_align_find_ref.html'>nmr_align_find_ref</a></span>(<span class='no'>nmr_dataset</span>, <span class='no'>peak_data</span>)
-
-<span class='co'># 3.Spectra alignment using the ref spectrum and a maximum alignment shift</span>
-<span class='no'>nmr_dataset</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='nmr_align.html'>nmr_align</a></span>(<span class='no'>nmr_dataset</span>, <span class='co'># the dataset</span>
-                         <span class='no'>peak_data</span>, <span class='co'># detected peaks</span>
-                         <span class='kw'>NMRExp_ref</span> <span class='kw'>=</span> <span class='no'>NMRExp_ref</span>, <span class='co'># ref spectrum</span>
-                         <span class='kw'>maxShift_ppm</span> <span class='kw'>=</span> <span class='fl'>0.0015</span>, <span class='co'># max alignment shift</span>
-                         <span class='kw'>acceptLostPeak</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>) <span class='co'># lost peaks</span>
-
-<span class='co'># 4.Set sequential working to finish parallelization</span>
-<span class='fu'><a href='https://rdrr.io/pkg/future/man/plan.html'>plan</a></span>(<span class='no'>sequential</span>)
-
-<span class='co'># 5.Peak integration (please, consider previous normalization step).</span>
-<span class='co'># First we take the peak table from the reference spectrum</span>
-<span class='no'>peak_data_ref</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span>(<span class='no'>peak_data</span>, <span class='no'>NMRExperiment</span> <span class='kw'>==</span> <span class='no'>NMRExp_ref</span>)
-
-<span class='co'># Then we integrate spectra considering the peaks from the ref spectrum</span>
-<span class='no'>nmr_peak_table</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='nmr_integrate_peak_positions.html'>nmr_integrate_peak_positions</a></span>(
-<span class='kw'>samples</span> <span class='kw'>=</span> <span class='no'>nmr_dataset</span>,
-<span class='kw'>peak_pos_ppm</span> <span class='kw'>=</span> <span class='no'>peak_data_ref</span>$<span class='no'>ppm</span>,
-<span class='kw'>peak_width_ppm</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
-
-<span class='co'>#If you wanted the final peak table before machine learning you can run</span>
-<span class='no'>nmr_peak_table_completed</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='get_integration_with_metadata.html'>get_integration_with_metadata</a></span>(<span class='no'>nmr_peak_table</span>)
-
-}</div></pre>
+<span class='fu'>nmr_detect_peaks_plot</span>(<span class='no'>dataset_1D</span>, <span class='no'>peak_data</span>, <span class='st'>"NMRExp_ref"</span>)</div><div class='img'><img src='nmr_detect_peaks_plot-1.png' alt='' width='700' height='433' /></div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
+      <li><a href="#value">Value</a></li>
       <li><a href="#see-also">See also</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>

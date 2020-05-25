@@ -69,7 +69,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">AlpsNMR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.3.3.9002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.5.9002</span>
       </span>
     </div>
 
@@ -190,25 +190,25 @@ When set to <code>TRUE</code> negative areas are set to zero.</p></td>
 <code><a href='nmr_identify_regions_blood.html'>nmr_identify_regions_blood</a>()</code>,
 <code><a href='nmr_identify_regions_cell.html'>nmr_identify_regions_cell</a>()</code>,
 <code><a href='nmr_identify_regions_urine.html'>nmr_identify_regions_urine</a>()</code>,
-<code><a href='pipe_peakdet_align.html'>pipe_peakdet_align</a>()</code>,
+<code><a href='pipe_pakdet_align.html'>pipe_pakdet_align</a></code>,
 <code><a href='regions_from_peak_table.html'>regions_from_peak_table</a>()</code></p>
 <p>Other peak integration functions: 
 <code><a href='computes_peak_width_ppm.html'>computes_peak_width_ppm</a>()</code>,
-<code><a href='get_integration_with_metadata.html'>get_integration_with_metadata</a>()</code>,
+<code><a href='get_integration_with_metada.html'>get_integration_with_metada</a></code>,
 <code><a href='nmr_identify_regions_blood.html'>nmr_identify_regions_blood</a>()</code>,
 <code><a href='nmr_identify_regions_cell.html'>nmr_identify_regions_cell</a>()</code>,
 <code><a href='nmr_identify_regions_urine.html'>nmr_identify_regions_urine</a>()</code>,
 <code><a href='nmr_integrate_peak_positions.html'>nmr_integrate_peak_positions</a>()</code>,
 <code><a href='pipe_peak_integration.html'>pipe_peak_integration</a>()</code></p>
 <p>Other nmr_dataset_1D functions: 
-<code><a href='Automatic_targeted_profiling.html'>Automatic_targeted_profiling</a>()</code>,
 <code><a href='sub-.nmr_dataset_1D.html'>[.nmr_dataset_1D</a>()</code>,
 <code><a href='computes_peak_width_ppm.html'>computes_peak_width_ppm</a>()</code>,
 <code><a href='file_lister.html'>file_lister</a>()</code>,
 <code><a href='files_to_rDolphin_blood.html'>files_to_rDolphin_blood</a>()</code>,
 <code><a href='files_to_rDolphin_cell.html'>files_to_rDolphin_cell</a>()</code>,
 <code><a href='files_to_rDolphin_urine.html'>files_to_rDolphin_urine</a>()</code>,
-<code><a href='get_integration_with_metadata.html'>get_integration_with_metadata</a>()</code>,
+<code><a href='format.nmr_dataset_1D.html'>format.nmr_dataset_1D</a>()</code>,
+<code><a href='get_integration_with_metada.html'>get_integration_with_metada</a></code>,
 <code><a href='is.nmr_dataset_1D.html'>is.nmr_dataset_1D</a>()</code>,
 <code><a href='load_and_save_functions.html'>load_and_save_functions</a></code>,
 <code><a href='new_nmr_dataset_1D.html'>new_nmr_dataset_1D</a>()</code>,
@@ -235,35 +235,35 @@ When set to <code>TRUE</code> negative areas are set to zero.</p></td>
 <code><a href='nmr_ppm_resolution.html'>nmr_ppm_resolution</a>()</code>,
 <code><a href='plot.nmr_dataset_1D.html'>plot.nmr_dataset_1D</a>()</code>,
 <code><a href='plot_webgl.html'>plot_webgl</a>()</code>,
-<code><a href='rdCV_PLS_RF_ML.html'>rdCV_PLS_RF_ML</a>()</code>,
-<code><a href='rdCV_PLS_RF.html'>rdCV_PLS_RF</a>()</code>,
+<code><a href='print.nmr_dataset_1D.html'>print.nmr_dataset_1D</a>()</code>,
 <code><a href='save_files_to_rDolphin.html'>save_files_to_rDolphin</a>()</code>,
-<code><a href='to_ASICS.html'>to_ASICS</a>()</code>,
 <code><a href='to_ChemoSpec.html'>to_ChemoSpec</a>()</code>,
-<code><a href='to_rDolphin.html'>to_rDolphin</a>()</code>,
-<code><a href='validate_nmr_dataset_1D.html'>validate_nmr_dataset_1D</a>()</code></p></div>
+<code><a href='validate_nmr_dataset.html'>validate_nmr_dataset</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='co'># We integrate a region with two peaks and a valley. This is how the</span>
-<span class='co'># final area is integrated.</span>
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>ggplot2</span>)
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>signal</span>)
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span>(<span class='kw'>from</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>to</span> <span class='kw'>=</span> <span class='fl'>11</span>, <span class='kw'>by</span> <span class='kw'>=</span> <span class='fl'>0.05</span>)
-<span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>signal</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/pkg/signal/man/interp1.html'>interp1</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>11</span>,
-                     <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>10</span>, <span class='fl'>10</span>, <span class='fl'>10</span>, <span class='fl'>12</span>, <span class='fl'>14</span>, <span class='fl'>20</span>, <span class='fl'>9</span>, <span class='fl'>14</span>, <span class='fl'>11</span>, <span class='fl'>11</span>, <span class='fl'>12</span>),
-                     <span class='kw'>xi</span> <span class='kw'>=</span> <span class='no'>x</span>)
+    <pre class="examples"><div class='input'><span class='co'>#Creating a dataset</span>
+<span class='no'>dataset</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='new_nmr_dataset_1D.html'>new_nmr_dataset_1D</a></span>(<span class='kw'>ppm_axis</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>10</span>,
+                              <span class='kw'>data_1r</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span>:<span class='fl'>99</span>,<span class='kw'>replace</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>), <span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>10</span>),
+                              <span class='kw'>metadata</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>external</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='kw'>NMRExperiment</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"10"</span>,
+                              <span class='st'>"20"</span>, <span class='st'>"30"</span>, <span class='st'>"40"</span>, <span class='st'>"50"</span>, <span class='st'>"60"</span>, <span class='st'>"70"</span>, <span class='st'>"80"</span>, <span class='st'>"90"</span>, <span class='st'>"100"</span>))))
 
-<span class='no'>xb</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/which.min.html'>which.min</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>abs</a></span>(<span class='no'>x</span> - <span class='fl'>3</span>)), <span class='fu'><a href='https://rdrr.io/r/base/which.min.html'>which.min</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>abs</a></span>(<span class='no'>x</span> - <span class='fl'>9</span>)))
-<span class='no'>basel</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>AlpsNMR</span><span class='kw ns'>:::</span><span class='fu'>rough_baseline</span>(<span class='no'>y</span>[<span class='no'>xb</span>[<span class='fl'>1</span>]:<span class='no'>xb</span>[<span class='fl'>2</span>]])
+<span class='co'># Integrating selected regions</span>
+<span class='no'>peak_table_integration</span> <span class='kw'>=</span> <span class='fu'>nmr_integrate_regions</span>(
+                                   <span class='kw'>samples</span> <span class='kw'>=</span> <span class='no'>dataset</span>,
+                                   <span class='kw'>regions</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>ppm</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>2</span>,<span class='fl'>5</span>)),
+                                   <span class='kw'>fix_baseline</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 
-<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='kw'>mapping</span> <span class='kw'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='no'>y</span>)) +
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='no'>y</span>)) +
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_polygon.html'>geom_polygon</a></span>(<span class='kw'>data</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>x</span>[<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='no'>xb</span>[<span class='fl'>1</span>]:<span class='no'>xb</span>[<span class='fl'>2</span>], <span class='fu'><a href='https://rdrr.io/r/base/rev.html'>rev</a></span>(<span class='no'>xb</span>[<span class='fl'>1</span>]:<span class='no'>xb</span>[<span class='fl'>2</span>]))],
-                                 <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='no'>y</span>[<span class='no'>xb</span>[<span class='fl'>1</span>]:<span class='no'>xb</span>[<span class='fl'>2</span>]], <span class='fu'><a href='https://rdrr.io/r/base/rev.html'>rev</a></span>(<span class='no'>basel</span>))),
-               <span class='kw'>fill</span> <span class='kw'>=</span> <span class='st'>"blue"</span>) +
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_continuous.html'>scale_y_continuous</a></span>(<span class='kw'>limits</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>5</span>, <span class='fl'>20</span>))
-}</div></pre>
+<span class='co'>#Creating a dataset</span>
+<span class='no'>dataset</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='new_nmr_dataset_1D.html'>new_nmr_dataset_1D</a></span>(<span class='kw'>ppm_axis</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>10</span>,
+                              <span class='kw'>data_1r</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/matrix.html'>matrix</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span>(<span class='fl'>0</span>:<span class='fl'>99</span>,<span class='kw'>replace</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>), <span class='kw'>nrow</span> <span class='kw'>=</span> <span class='fl'>10</span>),
+                              <span class='kw'>metadata</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>external</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(<span class='kw'>NMRExperiment</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"10"</span>,
+                               <span class='st'>"20"</span>, <span class='st'>"30"</span>, <span class='st'>"40"</span>, <span class='st'>"50"</span>, <span class='st'>"60"</span>, <span class='st'>"70"</span>, <span class='st'>"80"</span>, <span class='st'>"90"</span>, <span class='st'>"100"</span>))))
+
+<span class='co'># Integrating selected regions</span>
+<span class='no'>peak_table_integration</span> <span class='kw'>=</span> <span class='fu'>nmr_integrate_regions</span>(
+                                   <span class='kw'>samples</span> <span class='kw'>=</span> <span class='no'>dataset</span>,
+                                   <span class='kw'>regions</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>ppm</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>2</span>,<span class='fl'>5</span>)),
+                                   <span class='kw'>fix_baseline</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

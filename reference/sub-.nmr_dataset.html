@@ -69,7 +69,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">AlpsNMR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.3.3.9002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.5.9002</span>
       </span>
     </div>
 
@@ -151,6 +151,7 @@
 <code><a href='filter.nmr_dataset_family.html'>filter.nmr_dataset_family</a>()</code>,
 <code><a href='nmr_pca_outliers_filter.html'>nmr_pca_outliers_filter</a>()</code></p>
 <p>Other nmr_dataset functions: 
+<code><a href='format.nmr_dataset.html'>format.nmr_dataset</a>()</code>,
 <code><a href='load_and_save_functions.html'>load_and_save_functions</a></code>,
 <code><a href='new_nmr_dataset.html'>new_nmr_dataset</a>()</code>,
 <code><a href='nmr_interpolate_1D.html'>nmr_interpolate_1D</a>()</code>,
@@ -160,13 +161,13 @@
 <code><a href='nmr_meta_get.html'>nmr_meta_get</a>()</code>,
 <code><a href='nmr_ppm_resolution.html'>nmr_ppm_resolution</a>()</code>,
 <code><a href='nmr_read_samples.html'>nmr_read_samples</a>()</code>,
+<code><a href='print.nmr_dataset.html'>print.nmr_dataset</a>()</code>,
 <code><a href='validate_nmr_dataset.html'>validate_nmr_dataset</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='no'>data</span> <span class='kw'>&lt;-</span> <span class='fu'>nm_read_samples_dir</span>(<span class='st'>"your_dir"</span>)
-<span class='no'>data2</span> <span class='kw'>&lt;-</span> <span class='no'>data</span>[<span class='fl'>1</span>:<span class='fl'>3</span>] <span class='co'># get the first 3 samples</span>
-}</div></pre>
+    <pre class="examples"><div class='input'><span class='no'>dir_to_demo_dataset</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"dataset-demo"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"AlpsNMR"</span>)
+<span class='no'>dataset</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='nmr_read_samples.html'>nmr_read_samples_dir</a></span>(<span class='no'>dir_to_demo_dataset</span>)
+<span class='no'>dataset2</span> <span class='kw'>&lt;-</span> <span class='no'>dataset</span>[<span class='fl'>1</span>:<span class='fl'>3</span>] <span class='co'># get the first 3 samples</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

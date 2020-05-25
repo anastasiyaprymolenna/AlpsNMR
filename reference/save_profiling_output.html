@@ -69,7 +69,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">AlpsNMR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.3.3.9002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.5.9002</span>
       </span>
     </div>
 
@@ -121,7 +121,7 @@
     </div>
 
     <div class="ref-description">
-    <p>The function saves the output from <a href='Automatic_targeted_profiling.html'>Automatic_targeted_profiling</a> function in CSV format.</p>
+    <p>The function saves the output from Automatic_targeted_profiling function in CSV format.</p>
     </div>
 
     <pre class="usage"><span class='fu'>save_profiling_output</span>(<span class='no'>targeted_profiling</span>, <span class='no'>output_directory</span>)</pre>
@@ -131,7 +131,7 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>targeted_profiling</th>
-      <td><p>A list from <a href='Automatic_targeted_profiling.html'>Automatic_targeted_profiling</a> function</p></td>
+      <td><p>A list from Automatic_targeted_profiling function</p></td>
     </tr>
     <tr>
       <th>output_directory</th>
@@ -141,7 +141,7 @@
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>rDolphin output from <a href='Automatic_targeted_profiling.html'>Automatic_targeted_profiling</a> function:</p><ul>
+    <p>rDolphin output from Automatic_targeted_profiling function:</p><ul>
 <li><p>metabolites_intensity</p></li>
 <li><p>metabolites_quantification</p></li>
 <li><p>ROI_profiles_used</p></li>
@@ -154,7 +154,6 @@
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other import/export functions: 
-<code><a href='Automatic_targeted_profiling.html'>Automatic_targeted_profiling</a>()</code>,
 <code><a href='files_to_rDolphin_blood.html'>files_to_rDolphin_blood</a>()</code>,
 <code><a href='files_to_rDolphin_cell.html'>files_to_rDolphin_cell</a>()</code>,
 <code><a href='files_to_rDolphin_urine.html'>files_to_rDolphin_urine</a>()</code>,
@@ -166,18 +165,15 @@
 <code><a href='nmr_zip_bruker_samples.html'>nmr_zip_bruker_samples</a>()</code>,
 <code><a href='pipe_load_samples.html'>pipe_load_samples</a>()</code>,
 <code><a href='save_files_to_rDolphin.html'>save_files_to_rDolphin</a>()</code>,
-<code><a href='to_ASICS.html'>to_ASICS</a>()</code>,
-<code><a href='to_ChemoSpec.html'>to_ChemoSpec</a>()</code>,
-<code><a href='to_rDolphin.html'>to_rDolphin</a>()</code></p>
+<code><a href='to_ChemoSpec.html'>to_ChemoSpec</a>()</code></p>
 <p>Other to_rDolphin_blood functions: 
 <code><a href='files_to_rDolphin_blood.html'>files_to_rDolphin_blood</a>()</code>,
 <code><a href='save_files_to_rDolphin.html'>save_files_to_rDolphin</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='co'>## library(AlpsNMR)</span>
-<span class='no'>rDolphin_object</span> <span class='kw'>=</span> <span class='fu'><a href='to_rDolphin.html'>to_rDolphin</a></span>(<span class='no'>parameters</span>)
-<span class='no'>targeted_profiling</span> <span class='kw'>=</span> <span class='fu'><a href='Automatic_targeted_profiling.html'>Automatic_targeted_profiling</a></span>(<span class='no'>rDolphin</span>)
+<span class='no'>rDolphin_object</span> <span class='kw'>=</span> <span class='fu'>to_rDolphin</span>(<span class='no'>parameters</span>)
+<span class='no'>targeted_profiling</span> <span class='kw'>=</span> <span class='fu'>Automatic_targeted_profiling</span>(<span class='no'>rDolphin</span>)
 <span class='fu'>save_profiling_output</span>(<span class='no'>targeted_profiling</span>, <span class='no'>output_directory</span>)
 }</div></pre>
   </div>

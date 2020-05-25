@@ -75,7 +75,7 @@ function." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">AlpsNMR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.3.3.9002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.5.9002</span>
       </span>
     </div>
 
@@ -130,8 +130,8 @@ function." />
     <p>The rDolphin family functions are introduced to perform automatic targeted
 metabolite profiling. Therefore, ensure that you interpolated from -0.1 ppm
 in order to consider the TSP/DSS signal at 0.0 ppm. The function generates a
-list with the files required by <code>to_rDolphin</code> function. Then, it is required
-to save them with the <code>save_files_to_rDolphin</code>. <code>to_rDolphin</code> function will
+list with the files required by to_rDolphin function. Then, it is required
+to save them with the <code>save_files_to_rDolphin</code>. to_rDolphin function will
 read the generated "parameters.csv" file.
 function.</p>
     </div>
@@ -159,7 +159,6 @@ function.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other import/export functions: 
-<code><a href='Automatic_targeted_profiling.html'>Automatic_targeted_profiling</a>()</code>,
 <code><a href='files_to_rDolphin_cell.html'>files_to_rDolphin_cell</a>()</code>,
 <code><a href='files_to_rDolphin_urine.html'>files_to_rDolphin_urine</a>()</code>,
 <code><a href='load_and_save_functions.html'>load_and_save_functions</a></code>,
@@ -171,17 +170,15 @@ function.</p>
 <code><a href='pipe_load_samples.html'>pipe_load_samples</a>()</code>,
 <code><a href='save_files_to_rDolphin.html'>save_files_to_rDolphin</a>()</code>,
 <code><a href='save_profiling_output.html'>save_profiling_output</a>()</code>,
-<code><a href='to_ASICS.html'>to_ASICS</a>()</code>,
-<code><a href='to_ChemoSpec.html'>to_ChemoSpec</a>()</code>,
-<code><a href='to_rDolphin.html'>to_rDolphin</a>()</code></p>
+<code><a href='to_ChemoSpec.html'>to_ChemoSpec</a>()</code></p>
 <p>Other nmr_dataset_1D functions: 
-<code><a href='Automatic_targeted_profiling.html'>Automatic_targeted_profiling</a>()</code>,
 <code><a href='sub-.nmr_dataset_1D.html'>[.nmr_dataset_1D</a>()</code>,
 <code><a href='computes_peak_width_ppm.html'>computes_peak_width_ppm</a>()</code>,
 <code><a href='file_lister.html'>file_lister</a>()</code>,
 <code><a href='files_to_rDolphin_cell.html'>files_to_rDolphin_cell</a>()</code>,
 <code><a href='files_to_rDolphin_urine.html'>files_to_rDolphin_urine</a>()</code>,
-<code><a href='get_integration_with_metadata.html'>get_integration_with_metadata</a>()</code>,
+<code><a href='format.nmr_dataset_1D.html'>format.nmr_dataset_1D</a>()</code>,
+<code><a href='get_integration_with_metada.html'>get_integration_with_metada</a></code>,
 <code><a href='is.nmr_dataset_1D.html'>is.nmr_dataset_1D</a>()</code>,
 <code><a href='load_and_save_functions.html'>load_and_save_functions</a></code>,
 <code><a href='new_nmr_dataset_1D.html'>new_nmr_dataset_1D</a>()</code>,
@@ -209,19 +206,47 @@ function.</p>
 <code><a href='nmr_ppm_resolution.html'>nmr_ppm_resolution</a>()</code>,
 <code><a href='plot.nmr_dataset_1D.html'>plot.nmr_dataset_1D</a>()</code>,
 <code><a href='plot_webgl.html'>plot_webgl</a>()</code>,
-<code><a href='rdCV_PLS_RF_ML.html'>rdCV_PLS_RF_ML</a>()</code>,
-<code><a href='rdCV_PLS_RF.html'>rdCV_PLS_RF</a>()</code>,
+<code><a href='print.nmr_dataset_1D.html'>print.nmr_dataset_1D</a>()</code>,
 <code><a href='save_files_to_rDolphin.html'>save_files_to_rDolphin</a>()</code>,
-<code><a href='to_ASICS.html'>to_ASICS</a>()</code>,
 <code><a href='to_ChemoSpec.html'>to_ChemoSpec</a>()</code>,
-<code><a href='to_rDolphin.html'>to_rDolphin</a>()</code>,
-<code><a href='validate_nmr_dataset_1D.html'>validate_nmr_dataset_1D</a>()</code></p>
+<code><a href='validate_nmr_dataset.html'>validate_nmr_dataset</a>()</code></p>
 <p>Other to_rDolphin_blood functions: 
 <code><a href='save_files_to_rDolphin.html'>save_files_to_rDolphin</a>()</code>,
 <code><a href='save_profiling_output.html'>save_profiling_output</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"></pre>
+    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
+<span class='co'># Set the directory in which rDolphin files will be saved</span>
+<span class='no'>output_dir_10_rDolphin</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/file.path.html'>file.path</a></span>(<span class='no'>your_path</span>, <span class='st'>"10-rDolphin"</span>)
+<span class='kw pkg'>fs</span><span class='kw ns'>::</span><span class='fu'><a href='http://fs.r-lib.org/reference/create.html'>dir_create</a></span>(<span class='no'>output_dir_10_rDolphin</span>)
+
+<span class='co'># Generate the files (for plasma/serum)</span>
+<span class='no'>files_rDolphin</span> <span class='kw'>=</span> <span class='fu'>files_to_rDolphin_blood</span>(<span class='no'>nmr_dataset_0_10_ppm</span>)
+
+<span class='co'># Save the files</span>
+<span class='fu'><a href='save_files_to_rDolphin.html'>save_files_to_rDolphin</a></span>(<span class='no'>files_rDolphin</span>, <span class='no'>output_dir_10_rDolphin</span>)
+
+<span class='co'># Build the rDolphin object. Do not forget to set the directory</span>
+<span class='fu'><a href='https://rdrr.io/r/base/getwd.html'>setwd</a></span>(<span class='no'>output_dir_10_rDolphin</span>)
+<span class='no'>rDolphin_object</span> <span class='kw'>=</span> <span class='fu'>to_rDolphin</span>(<span class='st'>"Parameters.csv"</span>)
+
+<span class='co'># Visualize your spectra</span>
+<span class='fu'>rDolphin_plot</span>(<span class='no'>rDolphin_object</span>)
+
+<span class='co'># Run the main profiling function (it takes a while)</span>
+<span class='no'>targeted_profiling</span> <span class='kw'>=</span> <span class='fu'>Automatic_targeted_profiling</span>(<span class='no'>rDolphin_object</span>)
+
+<span class='co'># Save results</span>
+<span class='fu'><a href='save_profiling_output.html'>save_profiling_output</a></span>(<span class='no'>targeted_profiling</span>, <span class='no'>output_dir_10_rDolphin</span>)
+
+<span class='fu'>save_profiling_plots</span>(<span class='no'>output_dir_10_rDolphin</span>, <span class='no'>targeted_profiling</span>$<span class='no'>final_output</span>,
+<span class='no'>targeted_profiling</span>$<span class='no'>reproducibility_data</span>)
+
+<span class='co'>#Additionally, you can run some stats</span>
+<span class='no'>intensities</span> <span class='kw'>=</span> <span class='no'>targeted_profiling</span>$<span class='no'>final_output</span>$<span class='no'>intensity</span>
+<span class='no'>group</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/factor.html'>as.factor</a></span>(<span class='no'>rDolphin_object</span>$<span class='no'>Metadata</span>$<span class='no'>type</span>)
+<span class='no'>model_PLS</span> <span class='kw'>&lt;-</span> <span class='fu'>rdCV_PLS_RF</span>(<span class='kw'>X</span> <span class='kw'>=</span> <span class='no'>intensities</span>, <span class='kw'>Y</span> <span class='kw'>=</span> <span class='no'>group</span>)
+}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

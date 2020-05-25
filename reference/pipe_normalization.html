@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Pipe: Full spectra normalization — pipe_normalization • AlpsNMR</title>
+<title>Pipe: Full spectra normalization — Pipe_normalization • AlpsNMR</title>
 
 
 <!-- jquery -->
@@ -35,7 +35,7 @@
 
 
 
-<meta property="og:title" content="Pipe: Full spectra normalization — pipe_normalization" />
+<meta property="og:title" content="Pipe: Full spectra normalization — Pipe_normalization" />
 <meta property="og:description" content="Normalize the full spectra to the internal calibrant region, then exclude
 that region and finally perform PQN normalization." />
 <meta name="twitter:card" content="summary" />
@@ -70,7 +70,7 @@ that region and finally perform PQN normalization." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">AlpsNMR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.3.3.9002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.5.9002</span>
       </span>
     </div>
 
@@ -118,7 +118,7 @@ that region and finally perform PQN normalization." />
     <div class="page-header">
     <h1>Pipe: Full spectra normalization</h1>
     
-    <div class="hidden name"><code>pipe_normalization.Rd</code></div>
+    <div class="hidden name"><code>Pipe_normalization.Rd</code></div>
     </div>
 
     <div class="ref-description">
@@ -149,6 +149,9 @@ that region and finally perform PQN normalization.</p>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Pipe: Full spectra normalization</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>If there is no internal calibrant, only the PQN normalization is done.</p>
@@ -161,16 +164,38 @@ that region and finally perform PQN normalization.</p>
 <code><a href='pipe_interpolate_1D.html'>pipe_interpolate_1D</a>()</code>,
 <code><a href='pipe_load_samples.html'>pipe_load_samples</a>()</code>,
 <code><a href='pipe_outlier_detection.html'>pipe_outlier_detection</a>()</code>,
-<code><a href='pipe_peak_integration.html'>pipe_peak_integration</a>()</code>,
-<code><a href='pipe_peakdet_align.html'>pipe_peakdet_align</a>()</code></p></div>
+<code><a href='pipe_pakdet_align.html'>pipe_pakdet_align</a></code>,
+<code><a href='pipe_peak_integration.html'>pipe_peak_integration</a>()</code></p></div>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='no'>dataset</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"dataset-demo"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"AlpsNMR"</span>)
+<span class='no'>excel_file</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"dataset-demo"</span>,
+                          <span class='st'>"dummy_metadata.xlsx"</span>,
+                          <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"AlpsNMR"</span>)
+<span class='no'>nmr_dataset</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='nmr_read_samples.html'>nmr_read_samples_dir</a></span>(<span class='no'>dataset</span>)
+<span class='no'>nmr_dataset</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='nmr_interpolate_1D.html'>nmr_interpolate_1D</a></span>(<span class='no'>nmr_dataset</span>,
+                                  <span class='kw'>axis</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>min</span> <span class='kw'>=</span> -<span class='fl'>0.5</span>, <span class='kw'>max</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>by</span> <span class='kw'>=</span> <span class='fl'>2.3E-4</span>))
+<span class='no'>nmr_dataset_rds</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempfile</a></span>(<span class='kw'>fileext</span> <span class='kw'>=</span> <span class='st'>".rds"</span>)
+<span class='fu'><a href='load_and_save_functions.html'>nmr_dataset_save</a></span>(<span class='no'>nmr_dataset</span>, <span class='no'>nmr_dataset_rds</span>)</div><div class='output co'>#&gt; An nmr_dataset_1D (4 samples) </div><div class='input'><span class='no'>output_dir</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/tempfile.html'>tempdir</a></span>()
+<span class='fu'>pipe_normalization</span>(<span class='no'>nmr_dataset_rds</span>, <span class='kw'>output_dir</span> <span class='kw'>=</span> <span class='no'>output_dir</span>)</div><div class='output co'>#&gt; <span class='message'>Starting pipe_normalization at 2020-05-25 16:47:17</span></div><div class='output co'>#&gt; <span class='warning'>Warning: The Probabalistic Quotient Normalization requires several samples to compute the median spectra. Your number of samples is low</span></div><div class='output co'>#&gt; <span class='message'>Saving pipe_normalization results at 2020-05-25 16:47:18</span></div><div class='output co'>#&gt; <span class='warning'>Warning: 'scattergl' objects don't have these attributes: 'hoveron'</span>
+#&gt; <span class='warning'>Valid attributes include:</span>
+#&gt; <span class='warning'>'type', 'visible', 'showlegend', 'legendgroup', 'name', 'uid', 'ids', 'customdata', 'meta', 'selectedpoints', 'hoverinfo', 'hoverlabel', 'stream', 'transforms', 'uirevision', 'x', 'x0', 'dx', 'y', 'y0', 'dy', 'text', 'hovertext', 'textposition', 'textfont', 'mode', 'line', 'marker', 'connectgaps', 'fill', 'fillcolor', 'selected', 'unselected', 'opacity', 'hovertemplate', 'texttemplate', 'error_x', 'error_y', 'xcalendar', 'ycalendar', 'xaxis', 'yaxis', 'idssrc', 'customdatasrc', 'metasrc', 'hoverinfosrc', 'xsrc', 'ysrc', 'textsrc', 'hovertextsrc', 'textpositionsrc', 'hovertemplatesrc', 'texttemplatesrc', 'key', 'set', 'frame', 'transforms', '_isNestedKey', '_isSimpleKey', '_isGraticule', '_bbox'</span></div><div class='output co'>#&gt; <span class='warning'>Warning: 'scattergl' objects don't have these attributes: 'hoveron'</span>
+#&gt; <span class='warning'>Valid attributes include:</span>
+#&gt; <span class='warning'>'type', 'visible', 'showlegend', 'legendgroup', 'name', 'uid', 'ids', 'customdata', 'meta', 'selectedpoints', 'hoverinfo', 'hoverlabel', 'stream', 'transforms', 'uirevision', 'x', 'x0', 'dx', 'y', 'y0', 'dy', 'text', 'hovertext', 'textposition', 'textfont', 'mode', 'line', 'marker', 'connectgaps', 'fill', 'fillcolor', 'selected', 'unselected', 'opacity', 'hovertemplate', 'texttemplate', 'error_x', 'error_y', 'xcalendar', 'ycalendar', 'xaxis', 'yaxis', 'idssrc', 'customdatasrc', 'metasrc', 'hoverinfosrc', 'xsrc', 'ysrc', 'textsrc', 'hovertextsrc', 'textpositionsrc', 'hovertemplatesrc', 'texttemplatesrc', 'key', 'set', 'frame', 'transforms', '_isNestedKey', '_isSimpleKey', '_isGraticule', '_bbox'</span></div><div class='output co'>#&gt; <span class='warning'>Warning: 'scattergl' objects don't have these attributes: 'hoveron'</span>
+#&gt; <span class='warning'>Valid attributes include:</span>
+#&gt; <span class='warning'>'type', 'visible', 'showlegend', 'legendgroup', 'name', 'uid', 'ids', 'customdata', 'meta', 'selectedpoints', 'hoverinfo', 'hoverlabel', 'stream', 'transforms', 'uirevision', 'x', 'x0', 'dx', 'y', 'y0', 'dy', 'text', 'hovertext', 'textposition', 'textfont', 'mode', 'line', 'marker', 'connectgaps', 'fill', 'fillcolor', 'selected', 'unselected', 'opacity', 'hovertemplate', 'texttemplate', 'error_x', 'error_y', 'xcalendar', 'ycalendar', 'xaxis', 'yaxis', 'idssrc', 'customdatasrc', 'metasrc', 'hoverinfosrc', 'xsrc', 'ysrc', 'textsrc', 'hovertextsrc', 'textpositionsrc', 'hovertemplatesrc', 'texttemplatesrc', 'key', 'set', 'frame', 'transforms', '_isNestedKey', '_isSimpleKey', '_isGraticule', '_bbox'</span></div><div class='output co'>#&gt; <span class='warning'>Warning: 'scattergl' objects don't have these attributes: 'hoveron'</span>
+#&gt; <span class='warning'>Valid attributes include:</span>
+#&gt; <span class='warning'>'type', 'visible', 'showlegend', 'legendgroup', 'name', 'uid', 'ids', 'customdata', 'meta', 'selectedpoints', 'hoverinfo', 'hoverlabel', 'stream', 'transforms', 'uirevision', 'x', 'x0', 'dx', 'y', 'y0', 'dy', 'text', 'hovertext', 'textposition', 'textfont', 'mode', 'line', 'marker', 'connectgaps', 'fill', 'fillcolor', 'selected', 'unselected', 'opacity', 'hovertemplate', 'texttemplate', 'error_x', 'error_y', 'xcalendar', 'ycalendar', 'xaxis', 'yaxis', 'idssrc', 'customdatasrc', 'metasrc', 'hoverinfosrc', 'xsrc', 'ysrc', 'textsrc', 'hovertextsrc', 'textpositionsrc', 'hovertemplatesrc', 'texttemplatesrc', 'key', 'set', 'frame', 'transforms', '_isNestedKey', '_isSimpleKey', '_isGraticule', '_bbox'</span></div><div class='output co'>#&gt; <span class='message'>Ending pipe_normalization at 2020-05-25 16:47:26</span></div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
+      <li><a href="#value">Value</a></li>
       <li><a href="#details">Details</a></li>
       <li><a href="#see-also">See also</a></li>
+      <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>

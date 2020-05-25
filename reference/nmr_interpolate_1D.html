@@ -69,7 +69,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">AlpsNMR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.3.3.9002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.5.9002</span>
       </span>
     </div>
 
@@ -142,10 +142,14 @@
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Interpolate a set of 1D NMR Spectra</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other nmr_dataset functions: 
 <code><a href='sub-.nmr_dataset.html'>[.nmr_dataset</a>()</code>,
+<code><a href='format.nmr_dataset.html'>format.nmr_dataset</a>()</code>,
 <code><a href='load_and_save_functions.html'>load_and_save_functions</a></code>,
 <code><a href='new_nmr_dataset.html'>new_nmr_dataset</a>()</code>,
 <code><a href='nmr_meta_add.html'>nmr_meta_add</a>()</code>,
@@ -154,16 +158,17 @@
 <code><a href='nmr_meta_get.html'>nmr_meta_get</a>()</code>,
 <code><a href='nmr_ppm_resolution.html'>nmr_ppm_resolution</a>()</code>,
 <code><a href='nmr_read_samples.html'>nmr_read_samples</a>()</code>,
+<code><a href='print.nmr_dataset.html'>print.nmr_dataset</a>()</code>,
 <code><a href='validate_nmr_dataset.html'>validate_nmr_dataset</a>()</code></p>
 <p>Other nmr_dataset_1D functions: 
-<code><a href='Automatic_targeted_profiling.html'>Automatic_targeted_profiling</a>()</code>,
 <code><a href='sub-.nmr_dataset_1D.html'>[.nmr_dataset_1D</a>()</code>,
 <code><a href='computes_peak_width_ppm.html'>computes_peak_width_ppm</a>()</code>,
 <code><a href='file_lister.html'>file_lister</a>()</code>,
 <code><a href='files_to_rDolphin_blood.html'>files_to_rDolphin_blood</a>()</code>,
 <code><a href='files_to_rDolphin_cell.html'>files_to_rDolphin_cell</a>()</code>,
 <code><a href='files_to_rDolphin_urine.html'>files_to_rDolphin_urine</a>()</code>,
-<code><a href='get_integration_with_metadata.html'>get_integration_with_metadata</a>()</code>,
+<code><a href='format.nmr_dataset_1D.html'>format.nmr_dataset_1D</a>()</code>,
+<code><a href='get_integration_with_metada.html'>get_integration_with_metada</a></code>,
 <code><a href='is.nmr_dataset_1D.html'>is.nmr_dataset_1D</a>()</code>,
 <code><a href='load_and_save_functions.html'>load_and_save_functions</a></code>,
 <code><a href='new_nmr_dataset_1D.html'>new_nmr_dataset_1D</a>()</code>,
@@ -190,20 +195,27 @@
 <code><a href='nmr_ppm_resolution.html'>nmr_ppm_resolution</a>()</code>,
 <code><a href='plot.nmr_dataset_1D.html'>plot.nmr_dataset_1D</a>()</code>,
 <code><a href='plot_webgl.html'>plot_webgl</a>()</code>,
-<code><a href='rdCV_PLS_RF_ML.html'>rdCV_PLS_RF_ML</a>()</code>,
-<code><a href='rdCV_PLS_RF.html'>rdCV_PLS_RF</a>()</code>,
+<code><a href='print.nmr_dataset_1D.html'>print.nmr_dataset_1D</a>()</code>,
 <code><a href='save_files_to_rDolphin.html'>save_files_to_rDolphin</a>()</code>,
-<code><a href='to_ASICS.html'>to_ASICS</a>()</code>,
 <code><a href='to_ChemoSpec.html'>to_ChemoSpec</a>()</code>,
-<code><a href='to_rDolphin.html'>to_rDolphin</a>()</code>,
-<code><a href='validate_nmr_dataset_1D.html'>validate_nmr_dataset_1D</a>()</code></p></div>
+<code><a href='validate_nmr_dataset.html'>validate_nmr_dataset</a>()</code></p></div>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='no'>dir_to_demo_dataset</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"dataset-demo"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"AlpsNMR"</span>)
+<span class='no'>dataset</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='nmr_read_samples.html'>nmr_read_samples_dir</a></span>(<span class='no'>dir_to_demo_dataset</span>)
+<span class='no'>dataset_1D</span> <span class='kw'>&lt;-</span> <span class='fu'>nmr_interpolate_1D</span>(<span class='no'>dataset</span>, <span class='kw'>axis</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>min</span> <span class='kw'>=</span> -<span class='fl'>0.5</span>, <span class='kw'>max</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>by</span> <span class='kw'>=</span> <span class='fl'>2.3E-4</span>))
+
+<span class='no'>dir_to_demo_dataset</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"dataset-demo"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"AlpsNMR"</span>)
+<span class='no'>dataset</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='nmr_read_samples.html'>nmr_read_samples_dir</a></span>(<span class='no'>dir_to_demo_dataset</span>)
+<span class='no'>dataset_1D</span> <span class='kw'>&lt;-</span> <span class='fu'>nmr_interpolate_1D</span>(<span class='no'>dataset</span>, <span class='kw'>axis</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='kw'>min</span> <span class='kw'>=</span> -<span class='fl'>0.5</span>, <span class='kw'>max</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>by</span> <span class='kw'>=</span> <span class='fl'>2.3E-4</span>))</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
+      <li><a href="#value">Value</a></li>
       <li><a href="#see-also">See also</a></li>
+      <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>

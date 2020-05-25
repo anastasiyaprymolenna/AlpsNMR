@@ -70,7 +70,7 @@ to a given criteria." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">AlpsNMR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.3.3.9002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.5.9002</span>
       </span>
     </div>
 
@@ -143,26 +143,22 @@ to a given criteria.</p>
     </tr>
     <tr>
       <th>method</th>
-      <td><p>The criteria to be used for normalization</p><ul>
-<li><p>area: Normalize to the total area</p></li>
-<li><p>max: Normalize to the maximum intensity</p></li>
-<li><p>value: Normalize each sample to a user defined value</p></li>
-<li><p>region: Integrate a region and normalize each sample to that region</p></li>
-<li><p>pqn: Use Probabalistic Quotient Normalization for normalization</p></li>
-<li><p>none: Do not normalize at all</p></li>
-</ul></td>
+      <td><p>The criteria to be used for normalization
+- area: Normalize to the total area
+- max: Normalize to the maximum intensity
+- value: Normalize each sample to a user defined value
+- region: Integrate a region and normalize each sample to that region
+- pqn: Use Probabalistic Quotient Normalization for normalization
+- none: Do not normalize at all</p></td>
     </tr>
     <tr>
       <th>...</th>
-      <td><p>Method dependent arguments:</p><ul>
-<li><p><code>method == "value"</code>:</p><ul>
-<li><p><code>value</code>: A numeric vector with the normalization values to use</p></li>
-</ul></li>
-<li><p><code>method == "region"</code>:</p><ul>
-<li><p><code>ppm_range</code>: A chemical shift region to integrate</p></li>
-<li><p><code>...</code>: Other arguments passed on to <a href='nmr_integrate_regions.html'>nmr_integrate_regions</a></p></li>
-</ul></li>
-</ul></td>
+      <td><p>Method dependent arguments:
+- <code>method == "value"</code>:
+- <code>value</code>: A numeric vector with the normalization values to use
+- <code>method == "region"</code>:
+- <code>ppm_range</code>: A chemical shift region to integrate
+- <code>...</code>: Other arguments passed on to <a href='nmr_integrate_regions.html'>nmr_integrate_regions</a></p></td>
     </tr>
     </table>
 
@@ -180,14 +176,14 @@ the dispersion of the normalization factor for each sample.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><p>Other nmr_dataset_1D functions: 
-<code><a href='Automatic_targeted_profiling.html'>Automatic_targeted_profiling</a>()</code>,
 <code><a href='sub-.nmr_dataset_1D.html'>[.nmr_dataset_1D</a>()</code>,
 <code><a href='computes_peak_width_ppm.html'>computes_peak_width_ppm</a>()</code>,
 <code><a href='file_lister.html'>file_lister</a>()</code>,
 <code><a href='files_to_rDolphin_blood.html'>files_to_rDolphin_blood</a>()</code>,
 <code><a href='files_to_rDolphin_cell.html'>files_to_rDolphin_cell</a>()</code>,
 <code><a href='files_to_rDolphin_urine.html'>files_to_rDolphin_urine</a>()</code>,
-<code><a href='get_integration_with_metadata.html'>get_integration_with_metadata</a>()</code>,
+<code><a href='format.nmr_dataset_1D.html'>format.nmr_dataset_1D</a>()</code>,
+<code><a href='get_integration_with_metada.html'>get_integration_with_metada</a></code>,
 <code><a href='is.nmr_dataset_1D.html'>is.nmr_dataset_1D</a>()</code>,
 <code><a href='load_and_save_functions.html'>load_and_save_functions</a></code>,
 <code><a href='new_nmr_dataset_1D.html'>new_nmr_dataset_1D</a>()</code>,
@@ -214,16 +210,16 @@ the dispersion of the normalization factor for each sample.</p>
 <code><a href='nmr_ppm_resolution.html'>nmr_ppm_resolution</a>()</code>,
 <code><a href='plot.nmr_dataset_1D.html'>plot.nmr_dataset_1D</a>()</code>,
 <code><a href='plot_webgl.html'>plot_webgl</a>()</code>,
-<code><a href='rdCV_PLS_RF_ML.html'>rdCV_PLS_RF_ML</a>()</code>,
-<code><a href='rdCV_PLS_RF.html'>rdCV_PLS_RF</a>()</code>,
+<code><a href='print.nmr_dataset_1D.html'>print.nmr_dataset_1D</a>()</code>,
 <code><a href='save_files_to_rDolphin.html'>save_files_to_rDolphin</a>()</code>,
-<code><a href='to_ASICS.html'>to_ASICS</a>()</code>,
 <code><a href='to_ChemoSpec.html'>to_ChemoSpec</a>()</code>,
-<code><a href='to_rDolphin.html'>to_rDolphin</a>()</code>,
-<code><a href='validate_nmr_dataset_1D.html'>validate_nmr_dataset_1D</a>()</code></p></div>
+<code><a href='validate_nmr_dataset.html'>validate_nmr_dataset</a>()</code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='no'>nmr_dataset</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='load_and_save_functions.html'>nmr_dataset_load</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata"</span>, <span class='st'>"nmr_dataset.rds"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"AlpsNMR"</span>))
+<span class='no'>nmr_dataset</span> <span class='kw'>&lt;-</span> <span class='fu'>nmr_normalize</span>(<span class='no'>nmr_dataset</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"area"</span>)
+<span class='no'>norm_dataset</span> <span class='kw'>&lt;-</span> <span class='fu'>nmr_normalize</span>(<span class='no'>nmr_dataset</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>norm_dataset</span>$<span class='no'>plot</span>)</div><div class='output co'>#&gt; NULL</div><div class='input'><span class='no'>nmr_dataset</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='load_and_save_functions.html'>nmr_dataset_load</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"extdata"</span>, <span class='st'>"nmr_dataset.rds"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"AlpsNMR"</span>))
 <span class='no'>nmr_dataset</span> <span class='kw'>&lt;-</span> <span class='fu'>nmr_normalize</span>(<span class='no'>nmr_dataset</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"area"</span>)
 <span class='no'>norm_extra_info</span> <span class='kw'>&lt;-</span> <span class='fu'>nmr_normalize_extra_info</span>(<span class='no'>nmr_dataset</span>)
 <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>norm_extra_info</span>$<span class='no'>plot</span>)</div><div class='img'><img src='nmr_normalize-1.png' alt='' width='700' height='433' /></div></pre>

@@ -69,7 +69,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">AlpsNMR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.3.3.9002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.5.9002</span>
       </span>
     </div>
 
@@ -143,15 +143,13 @@ irods, see the example below.</p>
 its components for further analysis.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>AlpsNMR</span>)
-<span class='no'>sample_names</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"dataset/10/"</span>, <span class='st'>"dataset/20/"</span>, <span class='st'>"dataset/30/"</span>)
-<span class='no'>my_nmr_dataset</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='nmr_read_samples.html'>nmr_read_samples</a></span>(<span class='no'>sample_names</span>) <span class='kw'>%&gt;%</span>
+    <pre class="examples"><div class='input'><span class='no'>dir_to_demo_dataset</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/system.file.html'>system.file</a></span>(<span class='st'>"dataset-demo"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"AlpsNMR"</span>)
+<span class='no'>dataset</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='nmr_read_samples.html'>nmr_read_samples_dir</a></span>(<span class='no'>dir_to_demo_dataset</span>)
+<span class='no'>my_nmr_dataset</span> <span class='kw'>&lt;-</span> <span class='no'>dataset</span> <span class='kw'>%&gt;%</span>
   <span class='fu'><a href='nmr_interpolate_1D.html'>nmr_interpolate_1D</a></span>(<span class='kw'>axis</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0.4</span>, <span class='fl'>10</span>)) <span class='kw'>%&gt;%</span>
   <span class='fu'><a href='nmr_exclude_region.html'>nmr_exclude_region</a></span>(<span class='kw'>exclude</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>water</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>4.6</span>, <span class='fl'>5</span>))) <span class='kw'>%&gt;%</span>
   <span class='fu'><a href='nmr_normalize.html'>nmr_normalize</a></span>(<span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"pqn"</span>) <span class='kw'>%&gt;%</span>
-  <span class='no'>plot</span>
-}</div></pre>
+  <span class='no'>plot</span></div><div class='output co'>#&gt; <span class='warning'>Warning: The Probabalistic Quotient Normalization requires several samples to compute the median spectra. Your number of samples is low</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
