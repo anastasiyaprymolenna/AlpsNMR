@@ -200,13 +200,13 @@
 <span class='co'># nmr_batman_export_dataset(dataset_1D)</span>
 
 <span class='co'># deleting batman file to avoid error if exist</span>
-<span class='fu'><a href='https://rdrr.io/r/base/files.html'>file.remove</a></span>(<span class='st'>"BatmanInput/multi_data_user.csv"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: cannot remove file 'BatmanInput/multi_data_user.csv', reason 'No such file or directory'</span></div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='no'>multi_data_user_hmdb</span> <span class='kw'>&lt;-</span> <span class='fu'>nmr_batman_multi_data_user_hmdb</span>()
+<span class='fu'><a href='https://rdrr.io/r/base/files.html'>file.remove</a></span>(<span class='st'>"BatmanInput/multi_data_user.csv"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='no'>multi_data_user_hmdb</span> <span class='kw'>&lt;-</span> <span class='fu'>nmr_batman_multi_data_user_hmdb</span>()
 <span class='no'>hmdb</span> <span class='kw'>&lt;-</span> <span class='kw'>NULL</span>
 <span class='kw pkg'>utils</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='st'>"hmdb"</span>, <span class='kw'>package</span> <span class='kw'>=</span> <span class='st'>"AlpsNMR"</span>, <span class='kw'>envir</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/environment.html'>environment</a></span>())
 <span class='co'># hmdb &lt;- nmr_batman_multi_data_user(hmbd)</span>
 
 <span class='co'># deleting batman file to avoid error if exist</span>
-<span class='fu'><a href='https://rdrr.io/r/base/files.html'>file.remove</a></span>(<span class='st'>"BatmanInput/metabolitesList.csv"</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: cannot remove file 'BatmanInput/metabolitesList.csv', reason 'No such file or directory'</span></div><div class='output co'>#&gt; [1] FALSE</div><div class='input'><span class='no'>metabolite_names</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"alanine"</span>, <span class='st'>"glucose"</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/files.html'>file.remove</a></span>(<span class='st'>"BatmanInput/metabolitesList.csv"</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'><span class='no'>metabolite_names</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"alanine"</span>, <span class='st'>"glucose"</span>)
 <span class='no'>metabolite_names</span> <span class='kw'>&lt;-</span> <span class='fu'>nmr_batman_metabolites_list</span>(<span class='no'>metabolite_names</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
