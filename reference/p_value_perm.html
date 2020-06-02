@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>p-Value from permutation test — p_value_perm • AlpsNMR</title>
+<title>Deprecated function — p_value_perm • AlpsNMR</title>
 
 
 <!-- jquery -->
@@ -35,9 +35,8 @@
 
 
 
-<meta property="og:title" content="p-Value from permutation test — p_value_perm" />
-<meta property="og:description" content="The fucntion calculates the cumulative (1-tailed) probability of 'actual'
-belonging to 'h0' (permutation_object from the permutation_test_model function)." />
+<meta property="og:title" content="Deprecated function — p_value_perm" />
+<meta property="og:description" content="Deprecated function" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -70,7 +69,7 @@ belonging to 'h0' (permutation_object from the permutation_test_model function).
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">AlpsNMR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.3.3.9002</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.5.9002</span>
       </span>
     </div>
 
@@ -116,65 +115,23 @@ belonging to 'h0' (permutation_object from the permutation_test_model function).
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>p-Value from permutation test</h1>
+    <h1>Deprecated function</h1>
     
     <div class="hidden name"><code>p_value_perm.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>The fucntion calculates the cumulative (1-tailed) probability of 'actual'
-belonging to 'h0' (<code>permutation_object</code> from the <code>permutation_test_model</code> function).</p>
+    <p>Deprecated function</p>
     </div>
 
     <pre class="usage"><span class='fu'>p_value_perm</span>(<span class='no'>model_actual</span>, <span class='no'>permutation_object</span>)</pre>
 
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
-    <table class="ref-arguments">
-    <colgroup><col class="name" /><col class="desc" /></colgroup>
-    <tr>
-      <th>model_actual</th>
-      <td><p>The actual model performance  (e.g. misclassifications or Q2)</p></td>
-    </tr>
-    <tr>
-      <th>permutation_object</th>
-      <td><p>Null hypothesis distribution from permutation test
-from <code>permutation_test_model</code> function</p></td>
-    </tr>
-    </table>
-
-    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
-
-    <p>The p-value indicating if there is significant differences between
-the model performance and the null hypothesis distribution from permutation
-test test</p>
-
-    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-
-<span class='co'># 1.Build a model with the X data from your nmr object and your class:</span>
-<span class='no'>MVObj</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='rdCV_PLS_RF.html'>rdCV_PLS_RF</a></span>(<span class='fu'><a href='nmr_data.html'>nmr_data</a></span>(<span class='no'>nmr_peak_table</span>),
-<span class='kw'>Y</span> <span class='kw'>=</span> <span class='no'>nmr_peak_table_completed</span>$<span class='no'>Timepoint</span>)
 
 
-<span class='co'># 2.Model performance</span>
-<span class='fu'><a href='confusion_matrix.html'>confusion_matrix</a></span>(<span class='no'>MVObj</span>)
-
-<span class='co'># 3.Plotting the model</span>
-<span class='fu'><a href='MUVR_model_plot.html'>MUVR_model_plot</a></span>(<span class='no'>MVObj</span>)
-
-<span class='co'># 4.Permutation test</span>
-<span class='no'>permutations</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='permutation_test_model.html'>permutation_test_model</a></span>(<span class='no'>MVObj</span>, <span class='kw'>nPerm</span> <span class='kw'>=</span> <span class='fl'>50</span>)
-
-<span class='no'>p.value</span> <span class='kw'>=</span> <span class='fu'>p_value_perm</span>(<span class='no'>MVObj</span>$<span class='no'>miss</span><span class='kw'>[[</span><span class='fl'>2</span>]], <span class='no'>permutations</span>[,<span class='fl'>2</span>])
-
-}</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#value">Value</a></li>
-      <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>

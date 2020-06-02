@@ -78,7 +78,7 @@
       <h1>Introduction to AlpsNMR</h1>
                         <h4 class="author">Sergio Oller, Institute for Bioengineering of Catalonia</h4>
             
-            <h4 class="date">2020-05-29</h4>
+            <h4 class="date">2020-06-02</h4>
       
       
       <div class="hidden name"><code>introduction-to-alpsnmr.Rmd</code></div>
@@ -342,8 +342,15 @@ plot_interactive(plt, "plot_region.html")</code></pre>
 <span id="cb27-2"><a href="#cb27-2"></a>  <span class="dt">samples =</span> dataset_norm,</span>
 <span id="cb27-3"><a href="#cb27-3"></a>  <span class="dt">peak_pos_ppm =</span> peak_table<span class="op">$</span>ppm,</span>
 <span id="cb27-4"><a href="#cb27-4"></a>  <span class="dt">peak_width_ppm =</span> <span class="fl">0.006</span>)</span>
-<span id="cb27-5"><a href="#cb27-5"></a></span>
-<span id="cb27-6"><a href="#cb27-6"></a>peak_table_integration =<span class="st"> </span><span class="kw"><a href="../reference/get_integration_with_metada.html">get_integration_with_metadata</a></span>(peak_table_integration)</span></code></pre></div>
+<span id="cb27-5"><a href="#cb27-5"></a><span class="co">#&gt; New names:</span></span>
+<span id="cb27-6"><a href="#cb27-6"></a><span class="co">#&gt; * `ppm_-0.0002` -&gt; `ppm_-0.0002...1`</span></span>
+<span id="cb27-7"><a href="#cb27-7"></a><span class="co">#&gt; * ppm_0.9032 -&gt; ppm_0.9032...4</span></span>
+<span id="cb27-8"><a href="#cb27-8"></a><span class="co">#&gt; * ppm_0.9085 -&gt; ppm_0.9085...5</span></span>
+<span id="cb27-9"><a href="#cb27-9"></a><span class="co">#&gt; * ppm_0.9196 -&gt; ppm_0.9196...6</span></span>
+<span id="cb27-10"><a href="#cb27-10"></a><span class="co">#&gt; * ppm_0.9437 -&gt; ppm_0.9437...7</span></span>
+<span id="cb27-11"><a href="#cb27-11"></a><span class="co">#&gt; * ...</span></span>
+<span id="cb27-12"><a href="#cb27-12"></a></span>
+<span id="cb27-13"><a href="#cb27-13"></a>peak_table_integration =<span class="st"> </span><span class="kw"><a href="../reference/get_integration_with_metada.html">get_integration_with_metadata</a></span>(peak_table_integration)</span></code></pre></div>
 <p>We can also integrate with a specific peak position and some arbitrary width:</p>
 <div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="kw"><a href="../reference/nmr_data.html">nmr_data</a></span>(</span>
 <span id="cb28-2"><a href="#cb28-2"></a>  <span class="kw"><a href="../reference/nmr_integrate_peak_positions.html">nmr_integrate_peak_positions</a></span>(<span class="dt">samples =</span> dataset_norm,</span>
