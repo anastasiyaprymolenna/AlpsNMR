@@ -6,7 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Deprecated function — p_value_perm • AlpsNMR</title>
+<title>Deprecated function
+p-Value from permutation test — p_value_perm • AlpsNMR</title>
 
 
 <!-- jquery -->
@@ -35,8 +36,10 @@
 
 
 
-<meta property="og:title" content="Deprecated function — p_value_perm" />
-<meta property="og:description" content="Deprecated function" />
+<meta property="og:title" content="Deprecated function
+p-Value from permutation test — p_value_perm" />
+<meta property="og:description" content="The fucntion calculates the cumulative (1-tailed) probability of 'actual'
+belonging to 'h0' (permutation_object from the permutation_test_model function)." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -115,23 +118,45 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Deprecated function</h1>
+    <h1>Deprecated function
+p-Value from permutation test</h1>
     
     <div class="hidden name"><code>p_value_perm.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Deprecated function</p>
+    <p>The fucntion calculates the cumulative (1-tailed) probability of 'actual'
+belonging to 'h0' (<code>permutation_object</code> from the <code>permutation_test_model</code> function).</p>
     </div>
 
     <pre class="usage"><span class='fu'>p_value_perm</span>(<span class='no'>model_actual</span>, <span class='no'>permutation_object</span>)</pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>model_actual</th>
+      <td><p>The actual model performance    (e.g. misclassifications or Q2)</p></td>
+    </tr>
+    <tr>
+      <th>permutation_object</th>
+      <td><p>Null hypothesis distribution from permutation test
+from <code>permutation_test_model</code> function</p></td>
+    </tr>
+    </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>The p-value indicating if there is significant differences between
+the model performance and the null hypothesis distribution from permutation
+test test</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
+      <li><a href="#value">Value</a></li>
     </ul>
 
   </div>

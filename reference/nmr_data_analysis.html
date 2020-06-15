@@ -190,31 +190,31 @@ the examples here and <a href='plsda_auroc_vip_method.html'>plsda_auroc_vip_meth
 <span class='no'>num_samples</span> <span class='kw'>&lt;-</span> <span class='fl'>32</span> <span class='co'># use an even number in this example</span>
 <span class='no'>num_peaks</span> <span class='kw'>&lt;-</span> <span class='fl'>20</span>
 <span class='no'>metadata</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(
-  <span class='kw'>NMRExperiment</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>as.character</a></span>(<span class='fl'>1</span>:<span class='no'>num_samples</span>),
-  <span class='kw'>Condition</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"A"</span>, <span class='st'>"B"</span>), <span class='kw'>times</span> <span class='kw'>=</span> <span class='no'>num_samples</span>/<span class='fl'>2</span>),
-  <span class='kw'>stringsAsFactors</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
+    <span class='kw'>NMRExperiment</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>as.character</a></span>(<span class='fl'>1</span>:<span class='no'>num_samples</span>),
+    <span class='kw'>Condition</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"A"</span>, <span class='st'>"B"</span>), <span class='kw'>times</span> <span class='kw'>=</span> <span class='no'>num_samples</span>/<span class='fl'>2</span>),
+    <span class='kw'>stringsAsFactors</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
 )
 
 <span class='co'>### The matrix with peaks</span>
 <span class='no'>peak_means</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='no'>num_peaks</span>, <span class='kw'>min</span> <span class='kw'>=</span> <span class='fl'>300</span>, <span class='kw'>max</span> <span class='kw'>=</span> <span class='fl'>600</span>)
 <span class='no'>peak_sd</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span>(<span class='kw'>n</span> <span class='kw'>=</span> <span class='no'>num_peaks</span>, <span class='kw'>min</span> <span class='kw'>=</span> <span class='fl'>30</span>, <span class='kw'>max</span> <span class='kw'>=</span> <span class='fl'>60</span>)
 <span class='no'>peak_matrix</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/mapply.html'>mapply</a></span>(<span class='kw'>function</span>(<span class='no'>mu</span>, <span class='no'>sd</span>) <span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span>(<span class='no'>num_samples</span>, <span class='no'>mu</span>, <span class='no'>sd</span>),
-                      <span class='kw'>mu</span> <span class='kw'>=</span> <span class='no'>peak_means</span>, <span class='kw'>sd</span> <span class='kw'>=</span> <span class='no'>peak_sd</span>)
+                                            <span class='kw'>mu</span> <span class='kw'>=</span> <span class='no'>peak_means</span>, <span class='kw'>sd</span> <span class='kw'>=</span> <span class='no'>peak_sd</span>)
 <span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='no'>peak_matrix</span>) <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span>(<span class='st'>"Peak"</span>, <span class='fl'>1</span>:<span class='no'>num_peaks</span>)
 
 <span class='co'>## Artificial differences depending on the condition:</span>
 <span class='no'>peak_matrix</span>[<span class='no'>metadata</span>$<span class='no'>Condition</span> <span class='kw'>==</span> <span class='st'>"A"</span>, <span class='st'>"Peak2"</span>] <span class='kw'>&lt;-</span>
-  <span class='no'>peak_matrix</span>[<span class='no'>metadata</span>$<span class='no'>Condition</span> <span class='kw'>==</span> <span class='st'>"A"</span>, <span class='st'>"Peak2"</span>] + <span class='fl'>70</span>
+    <span class='no'>peak_matrix</span>[<span class='no'>metadata</span>$<span class='no'>Condition</span> <span class='kw'>==</span> <span class='st'>"A"</span>, <span class='st'>"Peak2"</span>] + <span class='fl'>70</span>
 
 <span class='no'>peak_matrix</span>[<span class='no'>metadata</span>$<span class='no'>Condition</span> <span class='kw'>==</span> <span class='st'>"A"</span>, <span class='st'>"Peak6"</span>] <span class='kw'>&lt;-</span>
-  <span class='no'>peak_matrix</span>[<span class='no'>metadata</span>$<span class='no'>Condition</span> <span class='kw'>==</span> <span class='st'>"A"</span>, <span class='st'>"Peak6"</span>] - <span class='fl'>60</span>
+    <span class='no'>peak_matrix</span>[<span class='no'>metadata</span>$<span class='no'>Condition</span> <span class='kw'>==</span> <span class='st'>"A"</span>, <span class='st'>"Peak6"</span>] - <span class='fl'>60</span>
 
 <span class='co'>### The nmr_dataset_peak_table</span>
 <span class='no'>peak_table</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='new_nmr_dataset_peak_table.html'>new_nmr_dataset_peak_table</a></span>(
-  <span class='kw'>peak_table</span> <span class='kw'>=</span> <span class='no'>peak_matrix</span>,
-  <span class='kw'>metadata</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>external</span> <span class='kw'>=</span> <span class='no'>metadata</span>)
+    <span class='kw'>peak_table</span> <span class='kw'>=</span> <span class='no'>peak_matrix</span>,
+    <span class='kw'>metadata</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>external</span> <span class='kw'>=</span> <span class='no'>metadata</span>)
 )
-<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>peak_table</span>)</div><div class='output co'>#&gt; An nmr_dataset_peak_table (32 samples, and 20 peaks) </div><div class='input'>
+
 <span class='co'>## We will use a double cross validation, splitting the samples with random</span>
 <span class='co'>## subsampling both in the external and internal validation.</span>
 <span class='co'>## The classification model will be a PLSDA, exploring at maximum 3 latent</span>
@@ -222,12 +222,12 @@ the examples here and <a href='plsda_auroc_vip_method.html'>plsda_auroc_vip_meth
 <span class='co'>## The best model will be selected based on the area under the ROC curve</span>
 <span class='no'>methodology</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='plsda_auroc_vip_method.html'>plsda_auroc_vip_method</a></span>(<span class='kw'>ncomp</span> <span class='kw'>=</span> <span class='fl'>3</span>)
 <span class='no'>model</span> <span class='kw'>&lt;-</span> <span class='fu'>nmr_data_analysis</span>(
-  <span class='no'>peak_table</span>,
-  <span class='kw'>y_column</span> <span class='kw'>=</span> <span class='st'>"Condition"</span>,
-  <span class='kw'>identity_column</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>external_val</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>iterations</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>test_size</span> <span class='kw'>=</span> <span class='fl'>0.25</span>),
-  <span class='kw'>internal_val</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>iterations</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>test_size</span> <span class='kw'>=</span> <span class='fl'>0.25</span>),
-  <span class='kw'>data_analysis_method</span> <span class='kw'>=</span> <span class='no'>methodology</span>
+    <span class='no'>peak_table</span>,
+    <span class='kw'>y_column</span> <span class='kw'>=</span> <span class='st'>"Condition"</span>,
+    <span class='kw'>identity_column</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
+    <span class='kw'>external_val</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>iterations</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>test_size</span> <span class='kw'>=</span> <span class='fl'>0.25</span>),
+    <span class='kw'>internal_val</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>iterations</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>test_size</span> <span class='kw'>=</span> <span class='fl'>0.25</span>),
+    <span class='kw'>data_analysis_method</span> <span class='kw'>=</span> <span class='no'>methodology</span>
 )
 <span class='co'>## Area under ROC for each outer cross-validation iteration:</span>
 <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>model</span>$<span class='no'>outer_cv_results_digested</span>$<span class='no'>auroc</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 3 x 3</span><span>

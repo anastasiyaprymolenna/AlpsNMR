@@ -162,10 +162,10 @@ output from model_VIP(MVObj) to <code>nmr_identify_regions</code> family functio
 <span class='fu'><a href='MUVR_model_plot.html'>MUVR_model_plot</a></span>(<span class='no'>MVObj</span>)
 
 <span class='co'># 4.Permutation test</span>
-<span class='no'>permutations</span> <span class='kw'>&lt;-</span> <span class='fu'>permutation_test_model</span>(<span class='no'>MVObj</span>, <span class='kw'>nPerm</span> <span class='kw'>=</span> <span class='fl'>50</span>)
+<span class='no'>permutations</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='permutation_test_model.html'>permutation_test_model</a></span>(<span class='no'>MVObj</span>, <span class='kw'>nPerm</span> <span class='kw'>=</span> <span class='fl'>50</span>)
 
 <span class='co'># 5.Plotting permutation test results</span>
-<span class='fu'>permutation_test_plot</span>(<span class='no'>MVObj</span>, <span class='no'>permutations</span>, <span class='kw'>model</span> <span class='kw'>=</span> <span class='st'>"Mid"</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"t"</span>)
+<span class='fu'><a href='permutation_test_plot.html'>permutation_test_plot</a></span>(<span class='no'>MVObj</span>, <span class='no'>permutations</span>, <span class='kw'>model</span> <span class='kw'>=</span> <span class='st'>"Mid"</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"t"</span>)
 
 <span class='co'># 6.p-Value</span>
 <span class='no'>p.value</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='p_value_perm.html'>p_value_perm</a></span>(<span class='no'>MVObj</span>$<span class='no'>miss</span><span class='kw'>[[</span><span class='st'>"mid"</span>]], <span class='no'>permutations</span>[, <span class='st'>"Mid"</span>])

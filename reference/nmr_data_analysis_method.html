@@ -137,7 +137,7 @@
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>train_evaluate_model</th>
-      <td><p>A function. The <code>train_evaluate_model</code> must have the following signature:</p><pre>function(x_train, y_train, identity_train, x_test, y_test, identity_test, ...)
+      <td><p>A function. The <code>train_evaluate_model</code> must have the following signature:</p><pre>    function(x_train, y_train, identity_train, x_test, y_test, identity_test, ...)
 </pre>
 
 <p>The <code>x_train</code> and <code>y_train</code> (and their test counterparts) are self-explanatory.</p>
@@ -159,18 +159,18 @@ arguments to pass to <code>train_evaluate_model</code> either in the inner cv lo
 
 <p>The argument is a list of <code>train_evaluate_model</code> outputs.
 The return value of must be a list with at least an element named <code>train_evaluate_model_args</code>.
-<code>train_evaluate_model_args</code> must be a named list.</p><pre> - Each element must be named as one of the `train_evaluate_model` arguments.
- - Each element must be a vector as long as the number of outer cross-validations.
- - The values of each vector must be the values that the `train_evaluate_model` argument must take on each outer cross-validation iteration
-</pre>
-
-<p>Additional list elements can be returned and will be given back to the user</p></td>
+<code>train_evaluate_model_args</code> must be a named list.</p><ul>
+<li><p>Each element must be named as one of the <code>train_evaluate_model</code> arguments.</p></li>
+<li><p>Each element must be a vector as long as the number of outer cross-validations.</p></li>
+<li><p>The values of each vector must be the values that the <code>train_evaluate_model</code>
+argument must take on each outer cross-validation iteration
+Additional list elements can be returned and will be given back to the user</p></li>
+</ul></td>
     </tr>
     <tr>
       <th>train_evaluate_model_digest_outer</th>
-      <td><p>A function with a single argument:</p><pre>function(outer_cv_results)
-</pre>
-
+      <td><p>A function with a single argument:</p>
+<p>function(outer_cv_results)</p>
 <p>The argument is a list of <code>train_evaluate_model</code> outputs in outer cross-validation.
 The return value is returned by <code>nmr_data_analysis</code></p></td>
     </tr>

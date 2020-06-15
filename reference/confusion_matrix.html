@@ -6,7 +6,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Deprecated function — confusion_matrix • AlpsNMR</title>
+<title>Deprecated function
+Confusion matrix of the MUVR model — confusion_matrix • AlpsNMR</title>
 
 
 <!-- jquery -->
@@ -35,8 +36,11 @@
 
 
 
-<meta property="og:title" content="Deprecated function — confusion_matrix" />
-<meta property="og:description" content="Deprecated function" />
+<meta property="og:title" content="Deprecated function
+Confusion matrix of the MUVR model — confusion_matrix" />
+<meta property="og:description" content="After creating a model with the rdCV_PLS_RF function, you can run
+confusion_matrix on the model to make a confusion matrix from MUVR. This
+gives information about the model performance (e.g. classification rate)." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -115,23 +119,43 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Deprecated function</h1>
+    <h1>Deprecated function
+Confusion matrix of the MUVR model</h1>
     
     <div class="hidden name"><code>confusion_matrix.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Deprecated function</p>
+    <p>After creating a model with the <code>rdCV_PLS_RF</code> function, you can run
+<code>confusion_matrix</code> on the model to make a confusion matrix from MUVR. This
+gives information about the model performance (e.g. classification rate).</p>
     </div>
 
     <pre class="usage"><span class='fu'>confusion_matrix</span>(<span class='no'>MVObj</span>, <span class='kw'>model</span> <span class='kw'>=</span> <span class='st'>"mid"</span>)</pre>
 
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>MVObj</th>
+      <td><p>A MUVR object (classification analysis)</p></td>
+    </tr>
+    <tr>
+      <th>model</th>
+      <td><p>min, mid or max model</p></td>
+    </tr>
+    </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>A confusion matrix of the model comparing actual vs predicted class</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
+      <li><a href="#arguments">Arguments</a></li>
+      <li><a href="#value">Value</a></li>
     </ul>
 
   </div>
