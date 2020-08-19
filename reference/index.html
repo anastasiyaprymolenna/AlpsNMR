@@ -190,9 +190,15 @@ Model plot</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="Pipe_normalization.html">pipe_normalization()</a></code> </p>
+          <p><code><a href="Peak_detection.html">validate_nmr_dataset_peak_table()</a></code> <code><a href="Peak_detection.html">nmr_detect_peaks()</a></code> <code><a href="Peak_detection.html">nmr_detect_peaks_plot()</a></code> <code><a href="Peak_detection.html">nmr_detect_peaks_tune_snr()</a></code> <code><a href="Peak_detection.html">nmr_align()</a></code> <code><a href="Peak_detection.html">nmr_integrate_peak_positions()</a></code> <code><a href="Peak_detection.html">get_integration_with_metadata()</a></code> </p>
         </td>
-        <td><p>Pipe: Full spectra normalization</p></td>
+        <td><p>Validate nmr_dataset_peak_table objects</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="Pipelines.html">pipe_load_samples()</a></code> <code><a href="Pipelines.html">pipe_add_metadata()</a></code> <code><a href="Pipelines.html">pipe_interpolate_1D()</a></code> <code><a href="Pipelines.html">pipe_exclude_regions()</a></code> <code><a href="Pipelines.html">pipe_outlier_detection()</a></code> <code><a href="Pipelines.html">pipe_filter_samples()</a></code> <code><a href="Pipelines.html">pipe_peakdet_align()</a></code> <code><a href="Pipelines.html">pipe_peak_integration()</a></code> <code><a href="Pipelines.html">pipe_normalization()</a></code> </p>
+        </td>
+        <td><p>Pipelines</p></td>
       </tr><tr>
         
         <td>
@@ -211,6 +217,18 @@ Model plot</p></td>
           <p><code><a href="ROI_urine.html">ROI_urine</a></code> </p>
         </td>
         <td><p>ROIs for urine samples</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="bp_VIP_analysis.html">bp_VIP_analysis()</a></code> </p>
+        </td>
+        <td><p>Bootstrap and permutation over PLS-VIP</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="bp_kfold_VIP_analysis.html">bp_kfold_VIP_analysis()</a></code> </p>
+        </td>
+        <td><p>K-fold bootstrap and permutation over PLS-VIP</p></td>
       </tr><tr>
         
         <td>
@@ -281,12 +299,6 @@ Confusion matrix of the MUVR model</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="get_integration_with_metada.html">get_integration_with_metadata()</a></code> </p>
-        </td>
-        <td><p>Get integrals with metadata from <code>integrate peak positions</code></p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="hmdb.html">hmdb</a></code> </p>
         </td>
         <td><p>The Human Metabolome DataBase multiplet table</p></td>
@@ -324,6 +336,18 @@ Model VIP values</p></td>
       </tr><tr>
         
         <td>
+          <p><code><a href="models_stability_plot_bootstrap.html">models_stability_plot_bootstrap()</a></code> </p>
+        </td>
+        <td><p>Models stability plot</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="models_stability_plot_plsda.html">models_stability_plot_plsda()</a></code> </p>
+        </td>
+        <td><p>Models stability plot</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="new_nmr_dataset.html">new_nmr_dataset()</a></code> </p>
         </td>
         <td><p>Create an nmr_dataset object</p></td>
@@ -339,12 +363,6 @@ Model VIP values</p></td>
           <p><code><a href="new_nmr_dataset_peak_table.html">new_nmr_dataset_peak_table()</a></code> </p>
         </td>
         <td><p>Creates a new nmr_dataset_peak_table object from scratch</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="nmr_align.html">nmr_align()</a></code> </p>
-        </td>
-        <td><p>Align NMR spectra</p></td>
       </tr><tr>
         
         <td>
@@ -420,24 +438,6 @@ Model VIP values</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="nmr_detect_peaks.html">nmr_detect_peaks()</a></code> </p>
-        </td>
-        <td><p>Peak detection for NMR</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="nmr_detect_peaks_plot.html">nmr_detect_peaks_plot()</a></code> </p>
-        </td>
-        <td><p>Plot peak detection results</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="nmr_detect_peaks_tune_snr.html">nmr_detect_peaks_tune_snr()</a></code> </p>
-        </td>
-        <td><p>Diagnose SNR threshold in peak detection</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="nmr_exclude_region.html">nmr_exclude_region()</a></code> </p>
         </td>
         <td><p>Exclude region from samples</p></td>
@@ -465,12 +465,6 @@ Model VIP values</p></td>
           <p><code><a href="nmr_identify_regions_urine.html">nmr_identify_regions_urine()</a></code> </p>
         </td>
         <td><p>NMR peak identification (urine samples)</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="nmr_integrate_peak_positions.html">nmr_integrate_peak_positions()</a></code> </p>
-        </td>
-        <td><p>Integrate peak positions</p></td>
       </tr><tr>
         
         <td>
@@ -595,63 +589,39 @@ p-Value from permutation test</p></td>
       </tr><tr>
         
         <td>
-          <p><code><a href="pipe_add_metadata.html">pipe_add_metadata()</a></code> </p>
-        </td>
-        <td><p>Pipeline: Add Metadata</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="pipe_exclude_regions.html">pipe_exclude_regions()</a></code> </p>
-        </td>
-        <td><p>Pipeline: Exclude regions</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="pipe_filter_samples.html">pipe_filter_samples()</a></code> </p>
-        </td>
-        <td><p>Pipeline: Filter samples according to metadata conditions</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="pipe_interpolate_1D.html">pipe_interpolate_1D()</a></code> </p>
-        </td>
-        <td><p>Pipeline: Interpolate 1D samples</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="pipe_load_samples.html">pipe_load_samples()</a></code> </p>
-        </td>
-        <td><p>Pipeline: Load NMR samples</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="pipe_outlier_detection.html">pipe_outlier_detection()</a></code> </p>
-        </td>
-        <td><p>Pipeline: Remove blatant outliers</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="pipe_pakdet_align.html">pipe_peakdet_align()</a></code> </p>
-        </td>
-        <td><p>Pipeline: Peak detection and Alignment</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="pipe_peak_integration.html">pipe_peak_integration()</a></code> </p>
-        </td>
-        <td><p>Pipeline: Peak integration</p></td>
-      </tr><tr>
-        
-        <td>
           <p><code><a href="plot.nmr_dataset_1D.html">plot(<i>&lt;nmr_dataset_1D&gt;</i>)</a></code> </p>
         </td>
         <td><p>Plot an nmr_dataset_1D</p></td>
       </tr><tr>
         
         <td>
+          <p><code><a href="plot_bootstrap_multimodel.html">plot_bootstrap_multimodel()</a></code> </p>
+        </td>
+        <td><p>Bootstrap plot predictions</p></td>
+      </tr><tr>
+        
+        <td>
           <p><code><a href="plot_interactive.html">plot_interactive()</a></code> </p>
         </td>
         <td><p>Plots in WebGL</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="plot_plsda_multimodel.html">plot_plsda_multimodel()</a></code> </p>
+        </td>
+        <td><p>Multi PLDSA model plot predictions</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="plot_plsda_samples.html">plot_plsda_samples()</a></code> </p>
+        </td>
+        <td><p>Plot PLSDA predictions</p></td>
+      </tr><tr>
+        
+        <td>
+          <p><code><a href="plot_vip_scores.html">plot_vip_scores()</a></code> </p>
+        </td>
+        <td><p>Plot vip scores of bootstrap</p></td>
       </tr><tr>
         
         <td>
@@ -779,12 +749,6 @@ Feature selection and validation in MULTILEVEL analysis</p></td>
           <p><code><a href="validate_nmr_dataset_family.html">validate_nmr_dataset_family()</a></code> </p>
         </td>
         <td><p>Validate nmr_dataset_family objects</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="validate_nmr_dataset_peak_table.html">validate_nmr_dataset_peak_table()</a></code> </p>
-        </td>
-        <td><p>Validate nmr_dataset_peak_table objects</p></td>
       </tr>
     </tbody>
     </table>

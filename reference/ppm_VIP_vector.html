@@ -149,33 +149,36 @@ This is needed in case that an automated pipeline is applied, connecting the
 output from model_VIP(MVObj) to <code>nmr_identify_regions</code> family functions.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> (<span class='fl'>FALSE</span>) {
-<span class='co'># 1.Build a model with the X data from your nmr object and your class:</span>
-<span class='no'>MVObj</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='rdCV_PLS_RF.html'>rdCV_PLS_RF</a></span>(<span class='fu'><a href='nmr_data.html'>nmr_data</a></span>(<span class='no'>nmr_peak_table</span>),
-<span class='kw'>Y</span> <span class='kw'>=</span> <span class='no'>nmr_peak_table_completed</span>$<span class='no'>Timepoint</span>)
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/message.html'>message</a></span>(<span class='st'>"MUVR is not compatible with Bioconductor, 
+use bp_kfold_VIP_analysis method instead"</span>)</div><div class='output co'>#&gt; <span class='message'>MUVR is not compatible with Bioconductor, </span>
+#&gt; <span class='message'>use bp_kfold_VIP_analysis method instead</span></div><div class='input'>
+## Example of MUVR usage
+# 1.Build a model with the X data from your nmr object and your class:
+#MVObj <- rdCV_PLS_RF(nmr_data(nmr_peak_table),
+#Y = nmr_peak_table_completed$Timepoint)
 
+# 2.Model performance
+#confusion_matrix(MVObj)
 
-<span class='co'># 2.Model performance</span>
-<span class='fu'><a href='confusion_matrix.html'>confusion_matrix</a></span>(<span class='no'>MVObj</span>)
+# 3.Plotting the model
+#MUVR_model_plot(MVObj)
 
-<span class='co'># 3.Plotting the model</span>
-<span class='fu'><a href='MUVR_model_plot.html'>MUVR_model_plot</a></span>(<span class='no'>MVObj</span>)
+# 4.Permutation test
+#permutations <- permutation_test_model(MVObj, nPerm = 50)
 
-<span class='co'># 4.Permutation test</span>
-<span class='no'>permutations</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='permutation_test_model.html'>permutation_test_model</a></span>(<span class='no'>MVObj</span>, <span class='kw'>nPerm</span> <span class='kw'>=</span> <span class='fl'>50</span>)
+# 5.Plotting permutation test results
+#permutation_test_plot(MVObj, permutations, model = "Mid", type = "t")
 
-<span class='co'># 5.Plotting permutation test results</span>
-<span class='fu'><a href='permutation_test_plot.html'>permutation_test_plot</a></span>(<span class='no'>MVObj</span>, <span class='no'>permutations</span>, <span class='kw'>model</span> <span class='kw'>=</span> <span class='st'>"Mid"</span>, <span class='kw'>type</span> <span class='kw'>=</span> <span class='st'>"t"</span>)
+# 6.p-Value
+#p.value <- p_value_perm(MVObj$miss[["mid"]], permutations[, "Mid"])
 
-<span class='co'># 6.p-Value</span>
-<span class='no'>p.value</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='p_value_perm.html'>p_value_perm</a></span>(<span class='no'>MVObj</span>$<span class='no'>miss</span><span class='kw'>[[</span><span class='st'>"mid"</span>]], <span class='no'>permutations</span>[, <span class='st'>"Mid"</span>])
+# 7.Significant variables
+#VIPs <- model_VIP(MVObj)
 
-<span class='co'># 7.Significant variables</span>
-<span class='no'>VIPs</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='model_VIP.html'>model_VIP</a></span>(<span class='no'>MVObj</span>)
+# 8.Identification
+#results <- nmr_identify_regions_blood(ppm_VIP_vector(VIPs))
 
-<span class='co'># 8.Identification</span>
-<span class='no'>results</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='nmr_identify_regions_blood.html'>nmr_identify_regions_blood</a></span>(<span class='fu'>ppm_VIP_vector</span>(<span class='no'>VIPs</span>))
-}</div></pre>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

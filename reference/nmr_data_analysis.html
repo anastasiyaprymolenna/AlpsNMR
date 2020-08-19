@@ -233,16 +233,16 @@ the examples here and <a href='plsda_auroc_vip_method.html'>plsda_auroc_vip_meth
 <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>model</span>$<span class='no'>outer_cv_results_digested</span>$<span class='no'>auroc</span>)</div><div class='output co'>#&gt; <span style='color: #555555;'># A tibble: 3 x 3</span><span>
 #&gt;   cv_outer_iteration ncomp   auc
 #&gt;                </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;int&gt;</span><span> </span><span style='color: #555555;font-style: italic;'>&lt;dbl&gt;</span><span>
-#&gt; </span><span style='color: #555555;'>1</span><span>                  1     2 0.688
-#&gt; </span><span style='color: #555555;'>2</span><span>                  2     1 0.833
-#&gt; </span><span style='color: #555555;'>3</span><span>                  3     1 1    </div><div class='input'><span class='co'>## Rank Product of the Variable Importance in the Projection</span>
+#&gt; </span><span style='color: #555555;'>1</span><span>                  1     1   0.6
+#&gt; </span><span style='color: #555555;'>2</span><span>                  2     1   0.5
+#&gt; </span><span style='color: #555555;'>3</span><span>                  3     1   0.6</div><div class='input'><span class='co'>## Rank Product of the Variable Importance in the Projection</span>
 <span class='co'>## (Lower means more important)</span>
-<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/sort.html'>sort</a></span>(<span class='no'>model</span>$<span class='no'>outer_cv_results_digested</span>$<span class='no'>vip_rankproducts</span>))</div><div class='output co'>#&gt;     Peak6     Peak2    Peak14     Peak8    Peak13    Peak17    Peak20    Peak12 
-#&gt;  1.259921  1.587401  3.979057  6.036811  6.214465  7.054004  8.617739  8.895920 
-#&gt;     Peak3    Peak19    Peak18     Peak5    Peak10     Peak4     Peak7    Peak15 
-#&gt;  9.109767  9.252130  9.830476 11.260977 11.292432 12.588702 13.608184 13.679808 
-#&gt;     Peak1    Peak16    Peak11     Peak9 
-#&gt; 15.121969 15.326189 15.844855 16.618975 </div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/sort.html'>sort</a></span>(<span class='no'>model</span>$<span class='no'>outer_cv_results_digested</span>$<span class='no'>vip_rankproducts</span>))</div><div class='output co'>#&gt;     Peak6    Peak12     Peak2    Peak13    Peak18     Peak9    Peak20    Peak15 
+#&gt;  1.587401  1.709976  2.620741  5.808786  6.214465  6.316360  7.343420  8.572619 
+#&gt;     Peak4     Peak1    Peak16     Peak3     Peak8    Peak10    Peak17     Peak7 
+#&gt;  9.205164  9.321698 10.626586 11.887844 13.092049 13.276144 13.447902 13.477328 
+#&gt;    Peak14     Peak5    Peak19    Peak11 
+#&gt; 14.686841 15.234823 17.560336 17.758080 </div><div class='input'>
 </div></span></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

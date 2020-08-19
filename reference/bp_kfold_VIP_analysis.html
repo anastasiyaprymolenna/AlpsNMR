@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Compare PLSDA auroc VIP results — plsda_auroc_vip_compare • AlpsNMR</title>
+<title>K-fold bootstrap and permutation over PLS-VIP — bp_kfold_VIP_analysis • AlpsNMR</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,9 @@
 
 
 
-<meta property="og:title" content="Compare PLSDA auroc VIP results — plsda_auroc_vip_compare" />
-<meta property="og:description" content="Compare PLSDA auroc VIP results" />
+<meta property="og:title" content="K-fold bootstrap and permutation over PLS-VIP — bp_kfold_VIP_analysis" />
+<meta property="og:description" content="Bootstrap and permutation over PLS-VIP on AlpsNMR can be performed on both
+nmr_dataset_1D full spectra as well as nmr_dataset_peak_table peak tables." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -115,36 +116,68 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Compare PLSDA auroc VIP results</h1>
+    <h1>K-fold bootstrap and permutation over PLS-VIP</h1>
     
-    <div class="hidden name"><code>plsda_auroc_vip_compare.Rd</code></div>
+    <div class="hidden name"><code>bp_kfold_VIP_analysis.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Compare PLSDA auroc VIP results</p>
+    <p>Bootstrap and permutation over PLS-VIP on AlpsNMR can be performed on both
+<a href='nmr_dataset_1D.html'>nmr_dataset_1D</a> full spectra as well as <a href='nmr_dataset_peak_table.html'>nmr_dataset_peak_table</a> peak tables.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>plsda_auroc_vip_compare</span>(<span class='no'>...</span>)</pre>
+    <pre class="usage"><span class='fu'>bp_kfold_VIP_analysis</span>(<span class='no'>dataset</span>, <span class='no'>y_column</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>4</span>, <span class='kw'>ncomp</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>nbootstrap</span> <span class='kw'>=</span> <span class='fl'>300</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>...</th>
-      <td><p>Results of <a href='nmr_data_analysis.html'>nmr_data_analysis</a> to be combined. Give each result a name.</p></td>
+      <th>dataset</th>
+      <td><p>An <a href='nmr_dataset_family.html'>nmr_dataset_family</a> object</p></td>
+    </tr>
+    <tr>
+      <th>y_column</th>
+      <td><p>A string with the name of the y column (present in the
+metadata of the dataset)</p></td>
+    </tr>
+    <tr>
+      <th>k</th>
+      <td><p>Number of folds, recomended between 4 to 10</p></td>
+    </tr>
+    <tr>
+      <th>ncomp</th>
+      <td><p>number of components for the bootstrap models</p></td>
+    </tr>
+    <tr>
+      <th>nbootstrap</th>
+      <td><p>number of bootstrap dataset</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A plot of the AUC for each method</p>
+    <p>A list with the following elements:</p><ul>
+<li><p><code>important_vips</code>: A list with the important vips selected</p></li>
+<li><p><code>relevant_vips</code>: List of vips with some relevance</p></li>
+<li><p><code>wilcoxon_vips</code>: List of vips that pass a wilcoxon test</p></li>
+<li><p><code>vip_means</code>: Means of the vips scores</p></li>
+<li><p><code>vip_score_plot</code>: plot of the vips scores</p></li>
+<li><p><code>kfold_resuls</code>: results of the k <a href='bp_VIP_analysis.html'>bp_VIP_analysis</a></p></li>
+<li><p><code>kfold_index</code>: list of index of partitions of the folds</p></li>
+</ul>
+
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Use of the bootstrap and permutation methods for a more robust
+variable importance in the projection metric for partial least
+squares regression, in a k-fold cross validation</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Data analysis for a table of integrated peaks</span>
 
 <span class='co'>## Generate an artificial nmr_dataset_peak_table:</span>
 <span class='co'>### Generate artificial metadata:</span>
-<span class='no'>num_samples</span> <span class='kw'>&lt;-</span> <span class='fl'>32</span> <span class='co'># use an even number in this example</span>
+<span class='no'>num_samples</span> <span class='kw'>&lt;-</span> <span class='fl'>64</span> <span class='co'># use an even number in this example</span>
 <span class='no'>num_peaks</span> <span class='kw'>&lt;-</span> <span class='fl'>20</span>
 <span class='no'>metadata</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(
     <span class='kw'>NMRExperiment</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/character.html'>as.character</a></span>(<span class='fl'>1</span>:<span class='no'>num_samples</span>),
@@ -158,6 +191,7 @@
 <span class='no'>peak_matrix</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/mapply.html'>mapply</a></span>(<span class='kw'>function</span>(<span class='no'>mu</span>, <span class='no'>sd</span>) <span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span>(<span class='no'>num_samples</span>, <span class='no'>mu</span>, <span class='no'>sd</span>),
                                             <span class='kw'>mu</span> <span class='kw'>=</span> <span class='no'>peak_means</span>, <span class='kw'>sd</span> <span class='kw'>=</span> <span class='no'>peak_sd</span>)
 <span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>colnames</a></span>(<span class='no'>peak_matrix</span>) <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span>(<span class='st'>"Peak"</span>, <span class='fl'>1</span>:<span class='no'>num_peaks</span>)
+<span class='fu'><a href='https://rdrr.io/r/base/colnames.html'>rownames</a></span>(<span class='no'>peak_matrix</span>) <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste0</a></span>(<span class='st'>"Sample"</span>, <span class='fl'>1</span>:<span class='no'>num_samples</span>)
 
 <span class='co'>## Artificial differences depending on the condition:</span>
 <span class='no'>peak_matrix</span>[<span class='no'>metadata</span>$<span class='no'>Condition</span> <span class='kw'>==</span> <span class='st'>"A"</span>, <span class='st'>"Peak2"</span>] <span class='kw'>&lt;-</span>
@@ -172,32 +206,14 @@
     <span class='kw'>metadata</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>external</span> <span class='kw'>=</span> <span class='no'>metadata</span>)
 )
 
-<span class='co'>## We will use a double cross validation, splitting the samples with random</span>
-<span class='co'>## subsampling both in the external and internal validation.</span>
-<span class='co'>## The classification model will be a PLSDA, exploring at maximum 3 latent</span>
-<span class='co'>## variables.</span>
-<span class='co'>## The best model will be selected based on the area under the ROC curve</span>
-<span class='no'>methodology</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='plsda_auroc_vip_method.html'>plsda_auroc_vip_method</a></span>(<span class='kw'>ncomp</span> <span class='kw'>=</span> <span class='fl'>1</span>)
-<span class='no'>model1</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='nmr_data_analysis.html'>nmr_data_analysis</a></span>(
-    <span class='no'>peak_table</span>,
-    <span class='kw'>y_column</span> <span class='kw'>=</span> <span class='st'>"Condition"</span>,
-    <span class='kw'>identity_column</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-    <span class='kw'>external_val</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>iterations</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>test_size</span> <span class='kw'>=</span> <span class='fl'>0.25</span>),
-    <span class='kw'>internal_val</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>iterations</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>test_size</span> <span class='kw'>=</span> <span class='fl'>0.25</span>),
-    <span class='kw'>data_analysis_method</span> <span class='kw'>=</span> <span class='no'>methodology</span>
-)
+<span class='co'>## We will use bootstrap and permutation method for VIPs selection </span>
+<span class='co'>## in a a k-fold cross validation </span>
+<span class='no'>bp_results</span> <span class='kw'>&lt;-</span> <span class='fu'>bp_kfold_VIP_analysis</span>(<span class='no'>peak_table</span>, <span class='co'># Data to be analized</span>
+                           <span class='kw'>y_column</span> <span class='kw'>=</span> <span class='st'>"Condition"</span>, <span class='co'># Label</span>
+                           <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>3</span>,
+                           <span class='kw'>nbootstrap</span> <span class='kw'>=</span> <span class='fl'>10</span>)
 
-<span class='no'>methodology2</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='plsda_auroc_vip_method.html'>plsda_auroc_vip_method</a></span>(<span class='kw'>ncomp</span> <span class='kw'>=</span> <span class='fl'>2</span>)
-<span class='no'>model2</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='nmr_data_analysis.html'>nmr_data_analysis</a></span>(
-    <span class='no'>peak_table</span>,
-    <span class='kw'>y_column</span> <span class='kw'>=</span> <span class='st'>"Condition"</span>,
-    <span class='kw'>identity_column</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-    <span class='kw'>external_val</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>iterations</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>test_size</span> <span class='kw'>=</span> <span class='fl'>0.25</span>),
-    <span class='kw'>internal_val</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='kw'>iterations</span> <span class='kw'>=</span> <span class='fl'>1</span>, <span class='kw'>test_size</span> <span class='kw'>=</span> <span class='fl'>0.25</span>),
-    <span class='kw'>data_analysis_method</span> <span class='kw'>=</span> <span class='no'>methodology2</span>
-)
-
-<span class='fu'>plsda_auroc_vip_compare</span>(<span class='kw'>model1</span> <span class='kw'>=</span> <span class='no'>model1</span>, <span class='kw'>model2</span> <span class='kw'>=</span> <span class='no'>model2</span>)</div><div class='img'><img src='plsda_auroc_vip_compare-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/base/message.html'>message</a></span>(<span class='st'>"Selected VIPs are: "</span>, <span class='no'>bp_results</span>$<span class='no'>importarn_vips</span>)</div><div class='output co'>#&gt; <span class='message'>Selected VIPs are: </span></div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -205,6 +221,7 @@
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
+      <li><a href="#details">Details</a></li>
       <li><a href="#examples">Examples</a></li>
     </ul>
 
