@@ -211,7 +211,7 @@ squares regression, in a k-fold cross validation</p>
 <span class='no'>bp_results</span> <span class='kw'>&lt;-</span> <span class='fu'>bp_kfold_VIP_analysis</span>(<span class='no'>peak_table</span>, <span class='co'># Data to be analized</span>
                            <span class='kw'>y_column</span> <span class='kw'>=</span> <span class='st'>"Condition"</span>, <span class='co'># Label</span>
                            <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>3</span>,
-                           <span class='kw'>nbootstrap</span> <span class='kw'>=</span> <span class='fl'>10</span>)</div><div class='output co'>#&gt; <span class='error'>Error in checkForRemoteErrors(val): 2 nodes produced errors; first error: Argument 'dim.' must be an integer vector of length two.</span></div><div class='input'>
+                           <span class='kw'>nbootstrap</span> <span class='kw'>=</span> <span class='fl'>10</span>)</div><div class='output co'>#&gt; <span class='error'>Error in checkForRemoteErrors(val): one node produced an error: Argument 'dim.' must be an integer vector of length two.</span></div><div class='input'>
 <span class='fu'><a href='https://rdrr.io/r/base/message.html'>message</a></span>(<span class='st'>"Selected VIPs are: "</span>, <span class='no'>bp_results</span>$<span class='no'>importarn_vips</span>)</div><div class='output co'>#&gt; <span class='error'>Error in message("Selected VIPs are: ", bp_results$importarn_vips): object 'bp_results' not found</span></div><div class='input'>
 </div></pre>
   </div>
