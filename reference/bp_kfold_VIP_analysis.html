@@ -70,7 +70,7 @@ nmr_dataset_1D full spectra as well as nmr_dataset_peak_table peak tables." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">AlpsNMR</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.99.1</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">2.99.2</span>
       </span>
     </div>
 
@@ -211,8 +211,9 @@ squares regression, in a k-fold cross validation</p>
 <span class='no'>bp_results</span> <span class='kw'>&lt;-</span> <span class='fu'>bp_kfold_VIP_analysis</span>(<span class='no'>peak_table</span>, <span class='co'># Data to be analized</span>
                            <span class='kw'>y_column</span> <span class='kw'>=</span> <span class='st'>"Condition"</span>, <span class='co'># Label</span>
                            <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>3</span>,
-                           <span class='kw'>nbootstrap</span> <span class='kw'>=</span> <span class='fl'>10</span>)</div><div class='output co'>#&gt; <span class='error'>Error in checkForRemoteErrors(val): one node produced an error: Argument 'dim.' must be an integer vector of length two.</span></div><div class='input'>
-<span class='fu'><a href='https://rdrr.io/r/base/message.html'>message</a></span>(<span class='st'>"Selected VIPs are: "</span>, <span class='no'>bp_results</span>$<span class='no'>importarn_vips</span>)</div><div class='output co'>#&gt; <span class='error'>Error in message("Selected VIPs are: ", bp_results$importarn_vips): object 'bp_results' not found</span></div><div class='input'>
+                           <span class='kw'>nbootstrap</span> <span class='kw'>=</span> <span class='fl'>10</span>)
+
+<span class='fu'><a href='https://rdrr.io/r/base/message.html'>message</a></span>(<span class='st'>"Selected VIPs are: "</span>, <span class='no'>bp_results</span>$<span class='no'>importarn_vips</span>)</div><div class='output co'>#&gt; <span class='message'>Selected VIPs are: </span></div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
